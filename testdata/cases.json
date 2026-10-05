@@ -1,0 +1,83 @@
+[
+  {
+    "id": "inv01-classic-1p",
+    "layout": "classic",
+    "supplier": "building",
+    "pages": 1,
+    "scanned": false,
+    "lines": 30,
+    "pdf_kb": 4
+  },
+  {
+    "id": "inv02-modern-1p",
+    "layout": "modern",
+    "supplier": "food",
+    "pages": 1,
+    "scanned": false,
+    "lines": 27,
+    "pdf_kb": 4
+  },
+  {
+    "id": "inv03-classic-5p",
+    "layout": "classic",
+    "supplier": "food",
+    "pages": 5,
+    "scanned": false,
+    "lines": 177,
+    "pdf_kb": 15
+  },
+  {
+    "id": "inv04-modern-5p",
+    "layout": "modern",
+    "supplier": "office",
+    "pages": 5,
+    "scanned": false,
+    "lines": 196,
+    "pdf_kb": 15
+  },
+  {
+    "id": "inv05-classic-30p",
+    "layout": "classic",
+    "supplier": "building",
+    "pages": 30,
+    "scanned": false,
+    "lines": 1012,
+    "pdf_kb": 82
+  },
+  {
+    "id": "inv06-modern-30p",
+    "layout": "modern",
+    "supplier": "food",
+    "pages": 30,
+    "scanned": false,
+    "lines": 1157,
+    "pdf_kb": 85
+  },
+  {
+    "id": "inv07-scan-classic-1p",
+    "layout": "classic",
+    "supplier": "office",
+    "pages": 1,
+    "scanned": true,
+    "lines": 30,
+    "pdf_kb": 218
+  },
+  {
+    "id": "inv08-scan-modern-5p",
+    "layout": "modern",
+    "supplier": "building",
+    "pages": 5,
+    "scanned": true,
+    "lines": 165,
+    "pdf_kb": 1136
+  },
+  {
+    "id": "inv09-scan-classic-30p",
+    "layout": "classic",
+    "supplier": "food",
+    "pages": 30,
+    "scanned": true,
+    "lines": 1081,
+    "pdf_kb": 6727
+  }
+]

@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.venv
+
+# Secrets - never commit
+.env
+.env.*
+!.env.example
+
+# Eval run results (contain full extractions; regenerate any time)
+evals/results/
+
+# Step 7 portal: uploaded invoices + results (may contain client documents - never commit)
+data/
+
+# Private operations and local artifacts
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+.pytest_cache/
+*.db
+*.db-*
+*.sqlite*
+*.log
+recordings/
+transcripts/
+exports/
+node_modules/
+.next/
+*.tsbuildinfo

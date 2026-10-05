@@ -1,0 +1,221 @@
+{
+  "supplier_name": "Northfield Building Supply",
+  "invoice_number": "218391",
+  "invoice_date": "2026-06-13",
+  "currency": "USD",
+  "lines": [
+    {
+      "sku": "NB-11233",
+      "description": "Roofing Nails 1-1/4 in. Galvanized, 5 lb Box",
+      "quantity": 8.0,
+      "unit_price": 22.47,
+      "amount": 179.76
+    },
+    {
+      "sku": "NB-10685",
+      "description": "Copper Wire 12 AWG THHN Solid, Sold by the Foot",
+      "quantity": 29.0,
+      "unit_price": 0.58,
+      "amount": 16.82
+    },
+    {
+      "sku": "NB-11233",
+      "description": "Roofing Nails 1-1/4 in. Galvanized, 5 lb Box",
+      "quantity": 3.0,
+      "unit_price": 16.22,
+      "amount": 48.66
+    },
+    {
+      "sku": "NB-10959",
+      "description": "Construction Adhesive 10 oz Cartridge",
+      "quantity": 2.0,
+      "unit_price": 6.08,
+      "amount": 12.16
+    },
+    {
+      "sku": "NB-10685",
+      "description": "Copper Wire 12 AWG THHN Solid, Sold by the Foot",
+      "quantity": 14.0,
+      "unit_price": 0.88,
+      "amount": 12.32
+    },
+    {
+      "sku": "NB-10274",
+      "description": "Concrete Mix 80 lb Bag",
+      "quantity": 24.0,
+      "unit_price": 5.27,
+      "amount": 126.48
+    },
+    {
+      "sku": "NB-11096",
+      "description": "Pressure-Treated Plywood 3/4 in. x 4 ft. x 8 ft.",
+      "quantity": 6.0,
+      "unit_price": 54.16,
+      "amount": 324.96
+    },
+    {
+      "sku": "NB-10685",
+      "description": "Copper Wire 12 AWG THHN Solid, Sold by the Foot",
+      "quantity": 56.0,
+      "unit_price": 0.44,
+      "amount": 24.64
+    },
+    {
+      "sku": "NB-10411",
+      "description": "Wood Screws #8 x 2-1/2 in., Box of 100",
+      "quantity": 6.0,
+      "unit_price": 7.31,
+      "amount": 43.86
+    },
+    {
+      "sku": "NB-10548",
+      "description": "PVC Pipe Schedule 40, 3/4 in. x 10 ft.",
+      "quantity": 12.0,
+      "unit_price": 5.06,
+      "amount": 60.72
+    },
+    {
+      "sku": "NB-11233",
+      "description": "Roofing Nails 1-1/4 in. Galvanized, 5 lb Box",
+      "quantity": 12.0,
+      "unit_price": 20.8,
+      "amount": 249.6
+    },
+    {
+      "sku": "NB-10548",
+      "description": "PVC Pipe Schedule 40, 3/4 in. x 10 ft.",
+      "quantity": 5.0,
+      "unit_price": 5.97,
+      "amount": 29.85
+    },
+    {
+      "sku": "NB-10411",
+      "description": "Wood Screws #8 x 2-1/2 in., Box of 100",
+      "quantity": 5.0,
+      "unit_price": 9.11,
+      "amount": 45.55
+    },
+    {
+      "sku": "NB-11507",
+      "description": "Rebar #4 x 20 ft.",
+      "quantity": 1.0,
+      "unit_price": 13.01,
+      "amount": 13.01
+    },
+    {
+      "sku": "NB-10959",
+      "description": "Construction Adhesive 10 oz Cartridge",
+      "quantity": 1.0,
+      "unit_price": 4.65,
+      "amount": 4.65
+    },
+    {
+      "sku": "NB-10685",
+      "description": "Copper Wire 12 AWG THHN Solid, Sold by the Foot",
+      "quantity": 25.0,
+      "unit_price": 0.78,
+      "amount": 19.5
+    },
+    {
+      "sku": "NB-10000",
+      "description": "2x4x8 Kiln-Dried Stud, Premium Grade",
+      "quantity": 40.0,
+      "unit_price": 4.29,
+      "amount": 171.6
+    },
+    {
+      "sku": "NB-10274",
+      "description": "Concrete Mix 80 lb Bag",
+      "quantity": 5.0,
+      "unit_price": 7.96,
+      "amount": 39.8
+    },
+    {
+      "sku": "NB-10274",
+      "description": "Concrete Mix 80 lb Bag",
+      "quantity": 24.0,
+      "unit_price": 5.83,
+      "amount": 139.92
+    },
+    {
+      "sku": "NB-10274",
+      "description": "Concrete Mix 80 lb Bag",
+      "quantity": 20.0,
+      "unit_price": 6.21,
+      "amount": 124.2
+    },
+    {
+      "sku": "NB-10685",
+      "description": "Copper Wire 12 AWG THHN Solid, Sold by the Foot",
+      "quantity": 23.0,
+      "unit_price": 0.84,
+      "amount": 19.32
+    },
+    {
+      "sku": "NB-10959",
+      "description": "Construction Adhesive 10 oz Cartridge",
+      "quantity": 8.0,
+      "unit_price": 6.53,
+      "amount": 52.24
+    },
+    {
+      "sku": "NB-10548",
+      "description": "PVC Pipe Schedule 40, 3/4 in. x 10 ft.",
+      "quantity": 2.0,
+      "unit_price": 8.34,
+      "amount": 16.68
+    },
+    {
+      "sku": "NB-11507",
+      "description": "Rebar #4 x 20 ft.",
+      "quantity": 40.0,
+      "unit_price": 12.18,
+      "amount": 487.2
+    },
+    {
+      "sku": "NB-10000",
+      "description": "2x4x8 Kiln-Dried Stud, Premium Grade",
+      "quantity": 1.0,
+      "unit_price": 6.36,
+      "amount": 6.36
+    },
+    {
+      "sku": "NB-10000",
+      "description": "2x4x8 Kiln-Dried Stud, Premium Grade",
+      "quantity": 8.0,
+      "unit_price": 5.23,
+      "amount": 41.84
+    },
+    {
+      "sku": "NB-11507",
+      "description": "Rebar #4 x 20 ft.",
+      "quantity": 40.0,
+      "unit_price": 14.25,
+      "amount": 570.0
+    },
+    {
+      "sku": "NB-10137",
+      "description": "1/2 in. x 4 ft. x 8 ft. Drywall Panel, Moisture Resistant, Paper-Faced, Tapered Edge",
+      "quantity": 10.0,
+      "unit_price": 19.41,
+      "amount": 194.1
+    },
+    {
+      "sku": "",
+      "description": "Loyalty discount",
+      "quantity": 1.0,
+      "unit_price": -25.0,
+      "amount": -25.0
+    },
+    {
+      "sku": "",
+      "description": "Delivery charge",
+      "quantity": 1.0,
+      "unit_price": 45.0,
+      "amount": 45.0
+    }
+  ],
+  "subtotal": 3095.8,
+  "tax": 232.19,
+  "total": 3327.99
+}

@@ -1,0 +1,1250 @@
+{
+  "supplier_name": "Harbor Fresh Foodservice",
+  "invoice_number": "270031",
+  "invoice_date": "2026-01-20",
+  "currency": "USD",
+  "lines": [
+    {
+      "sku": "HF-11507",
+      "description": "Basil, Fresh, 1 lb",
+      "quantity": 20.0,
+      "unit_price": 12.19,
+      "amount": 243.8
+    },
+    {
+      "sku": "HF-11507",
+      "description": "Basil, Fresh, 1 lb",
+      "quantity": 2.0,
+      "unit_price": 14.14,
+      "amount": 28.28
+    },
+    {
+      "sku": "HF-11507",
+      "description": "Basil, Fresh, 1 lb",
+      "quantity": 10.0,
+      "unit_price": 9.55,
+      "amount": 95.5
+    },
+    {
+      "sku": "HF-11507",
+      "description": "Basil, Fresh, 1 lb",
+      "quantity": 5.0,
+      "unit_price": 9.85,
+      "amount": 49.25
+    },
+    {
+      "sku": "HF-10959",
+      "description": "All-Purpose Flour, 50 lb Bag",
+      "quantity": 40.0,
+      "unit_price": 27.9,
+      "amount": 1116.0
+    },
+    {
+      "sku": "HF-11370",
+      "description": "Atlantic Salmon Fillet, Skin-On (per lb)",
+      "quantity": 16.0,
+      "unit_price": 8.59,
+      "amount": 137.44
+    },
+    {
+      "sku": "HF-11233",
+      "description": "Takeout Containers, Hinged, 9 x 9 in., Compostable, Case of 200",
+      "quantity": 1.0,
+      "unit_price": 67.36,
+      "amount": 67.36
+    },
+    {
+      "sku": "HF-10000",
+      "description": "Chicken Breast, Boneless Skinless, Fresh (per lb)",
+      "quantity": 10.0,
+      "unit_price": 3.27,
+      "amount": 32.7
+    },
+    {
+      "sku": "HF-11233",
+      "description": "Takeout Containers, Hinged, 9 x 9 in., Compostable, Case of 200",
+      "quantity": 2.0,
+      "unit_price": 59.13,
+      "amount": 118.26
+    },
+    {
+      "sku": "HF-11507",
+      "description": "Basil, Fresh, 1 lb",
+      "quantity": 20.0,
+      "unit_price": 11.87,
+      "amount": 237.4
+    },
+    {
+      "sku": "HF-11233",
+      "description": "Takeout Containers, Hinged, 9 x 9 in., Compostable, Case of 200",
+      "quantity": 5.0,
+      "unit_price": 64.52,
+      "amount": 322.6
+    },
+    {
+      "sku": "HF-10411",
+      "description": "Mozzarella, Whole Milk, Low Moisture, Shredded, 4 x 5 lb Bags per Case",
+      "quantity": 10.0,
+      "unit_price": 78.58,
+      "amount": 785.8
+    },
+    {
+      "sku": "HF-11233",
+      "description": "Takeout Containers, Hinged, 9 x 9 in., Compostable, Case of 200",
+      "quantity": 4.0,
+      "unit_price": 51.72,
+      "amount": 206.88
+    },
+    {
+      "sku": "HF-10411",
+      "description": "Mozzarella, Whole Milk, Low Moisture, Shredded, 4 x 5 lb Bags per Case",
+      "quantity": 20.0,
+      "unit_price": 72.41,
+      "amount": 1448.2
+    },
+    {
+      "sku": "HF-11233",
+      "description": "Takeout Containers, Hinged, 9 x 9 in., Compostable, Case of 200",
+      "quantity": 40.0,
+      "unit_price": 58.77,
+      "amount": 2350.8
+    },
+    {
+      "sku": "HF-10548",
+      "description": "Paper Napkins, 2-Ply Dinner, White, Pack of 3000",
+      "quantity": 2.0,
+      "unit_price": 53.66,
+      "amount": 107.32
+    },
+    {
+      "sku": "HF-11096",
+      "description": "Heavy Cream 36%, 1/2 Gallon",
+      "quantity": 6.0,
+      "unit_price": 9.55,
+      "amount": 57.3
+    },
+    {
+      "sku": "HF-11096",
+      "description": "Heavy Cream 36%, 1/2 Gallon",
+      "quantity": 8.0,
+      "unit_price": 6.77,
+      "amount": 54.16
+    },
+    {
+      "sku": "HF-10548",
+      "description": "Paper Napkins, 2-Ply Dinner, White, Pack of 3000",
+      "quantity": 40.0,
+      "unit_price": 38.91,
+      "amount": 1556.4
+    },
+    {
+      "sku": "HF-10274",
+      "description": "Extra Virgin Olive Oil 3 L Tin",
+      "quantity": 8.0,
+      "unit_price": 30.1,
+      "amount": 240.8
+    },
+    {
+      "sku": "HF-10548",
+      "description": "Paper Napkins, 2-Ply Dinner, White, Pack of 3000",
+      "quantity": 6.0,
+      "unit_price": 58.23,
+      "amount": 349.38
+    },
+    {
+      "sku": "HF-10685",
+      "description": "Ground Beef 80/20 (per lb)",
+      "quantity": 13.0,
+      "unit_price": 3.72,
+      "amount": 48.36
+    },
+    {
+      "sku": "HF-10548",
+      "description": "Paper Napkins, 2-Ply Dinner, White, Pack of 3000",
+      "quantity": 1.0,
+      "unit_price": 48.67,
+      "amount": 48.67
+    },
+    {
+      "sku": "HF-11233",
+      "description": "Takeout Containers, Hinged, 9 x 9 in., Compostable, Case of 200",
+      "quantity": 1.0,
+      "unit_price": 65.69,
+      "amount": 65.69
+    },
+    {
+      "sku": "HF-11507",
+      "description": "Basil, Fresh, 1 lb",
+      "quantity": 1.0,
+      "unit_price": 11.68,
+      "amount": 11.68
+    },
+    {
+      "sku": "HF-11096",
+      "description": "Heavy Cream 36%, 1/2 Gallon",
+      "quantity": 10.0,
+      "unit_price": 7.91,
+      "amount": 79.1
+    },
+    {
+      "sku": "HF-10822",
+      "description": "Yellow Onions, 50 lb Sack",
+      "quantity": 20.0,
+      "unit_price": 23.34,
+      "amount": 466.8
+    },
+    {
+      "sku": "HF-10959",
+      "description": "All-Purpose Flour, 50 lb Bag",
+      "quantity": 1.0,
+      "unit_price": 21.62,
+      "amount": 21.62
+    },
+    {
+      "sku": "HF-10274",
+      "description": "Extra Virgin Olive Oil 3 L Tin",
+      "quantity": 1.0,
+      "unit_price": 35.12,
+      "amount": 35.12
+    },
+    {
+      "sku": "HF-10685",
+      "description": "Ground Beef 80/20 (per lb)",
+      "quantity": 71.0,
+      "unit_price": 4.99,
+      "amount": 354.29
+    },
+    {
+      "sku": "HF-10411",
+      "description": "Mozzarella, Whole Milk, Low Moisture, Shredded, 4 x 5 lb Bags per Case",
+      "quantity": 10.0,
+      "unit_price": 71.96,
+      "amount": 719.6
+    },
+    {
+      "sku": "HF-10411",
+      "description": "Mozzarella, Whole Milk, Low Moisture, Shredded, 4 x 5 lb Bags per Case",
+      "quantity": 5.0,
+      "unit_price": 61.87,
+      "amount": 309.35
+    },
+    {
+      "sku": "HF-10274",
+      "description": "Extra Virgin Olive Oil 3 L Tin",
+      "quantity": 12.0,
+      "unit_price": 37.26,
+      "amount": 447.12
+    },
+    {
+      "sku": "HF-11370",
+      "description": "Atlantic Salmon Fillet, Skin-On (per lb)",
+      "quantity": 23.0,
+      "unit_price": 9.9,
+      "amount": 227.7
+    },
+    {
+      "sku": "HF-10137",
+      "description": "Roma Tomatoes, Case 25 lb",
+      "quantity": 12.0,
+      "unit_price": 30.87,
+      "amount": 370.44
+    },
+    {
+      "sku": "HF-10000",
+      "description": "Chicken Breast, Boneless Skinless, Fresh (per lb)",
+      "quantity": 31.0,
+      "unit_price": 3.49,
+      "amount": 108.19
+    },
+    {
+      "sku": "HF-11096",
+      "description": "Heavy Cream 36%, 1/2 Gallon",
+      "quantity": 6.0,
+      "unit_price": 6.38,
+      "amount": 38.28
+    },
+    {
+      "sku": "HF-10548",
+      "description": "Paper Napkins, 2-Ply Dinner, White, Pack of 3000",
+      "quantity": 2.0,
+      "unit_price": 46.73,
+      "amount": 93.46
+    },
+    {
+      "sku": "HF-10274",
+      "description": "Extra Virgin Olive Oil 3 L Tin",
+      "quantity": 8.0,
+      "unit_price": 32.28,
+      "amount": 258.24
+    },
+    {
+      "sku": "HF-11233",
+      "description": "Takeout Containers, Hinged, 9 x 9 in., Compostable, Case of 200",
+      "quantity": 10.0,
+      "unit_price": 45.88,
+      "amount": 458.8
+    },
+    {
+      "sku": "HF-11370",
+      "description": "Atlantic Salmon Fillet, Skin-On (per lb)",
+      "quantity": 64.0,
+      "unit_price": 12.36,
+      "amount": 791.04
+    },
+    {
+      "sku": "HF-10685",
+      "description": "Ground Beef 80/20 (per lb)",
+      "quantity": 10.0,
+      "unit_price": 3.81,
+      "amount": 38.1
+    },
+    {
+      "sku": "HF-10000",
+      "description": "Chicken Breast, Boneless Skinless, Fresh (per lb)",
+      "quantity": 48.5,
+      "unit_price": 4.11,
+      "amount": 199.34
+    },
+    {
+      "sku": "HF-10274",
+      "description": "Extra Virgin Olive Oil 3 L Tin",
+      "quantity": 40.0,
+      "unit_price": 34.57,
+      "amount": 1382.8
+    },
+    {
+      "sku": "HF-10548",
+      "description": "Paper Napkins, 2-Ply Dinner, White, Pack of 3000",
+      "quantity": 24.0,
+      "unit_price": 54.97,
+      "amount": 1319.28
+    },
+    {
+      "sku": "HF-10548",
+      "description": "Paper Napkins, 2-Ply Dinner, White, Pack of 3000",
+      "quantity": 20.0,
+      "unit_price": 51.14,
+      "amount": 1022.8
+    },
+    {
+      "sku": "HF-11096",
+      "description": "Heavy Cream 36%, 1/2 Gallon",
+      "quantity": 3.0,
+      "unit_price": 7.28,
+      "amount": 21.84
+    },
+    {
+      "sku": "HF-10548",
+      "description": "Paper Napkins, 2-Ply Dinner, White, Pack of 3000",
+      "quantity": 5.0,
+      "unit_price": 49.46,
+      "amount": 247.3
+    },
+    {
+      "sku": "HF-11233",
+      "description": "Takeout Containers, Hinged, 9 x 9 in., Compostable, Case of 200",
+      "quantity": 24.0,
+      "unit_price": 57.19,
+      "amount": 1372.56
+    },
+    {
+      "sku": "HF-10822",
+      "description": "Yellow Onions, 50 lb Sack",
+      "quantity": 6.0,
+      "unit_price": 19.98,
+      "amount": 119.88
+    },
+    {
+      "sku": "HF-10959",
+      "description": "All-Purpose Flour, 50 lb Bag",
+      "quantity": 12.0,
+      "unit_price": 27.95,
+      "amount": 335.4
+    },
+    {
+      "sku": "HF-11233",
+      "description": "Takeout Containers, Hinged, 9 x 9 in., Compostable, Case of 200",
+      "quantity": 40.0,
+      "unit_price": 59.76,
+      "amount": 2390.4
+    },
+    {
+      "sku": "HF-11233",
+      "description": "Takeout Containers, Hinged, 9 x 9 in., Compostable, Case of 200",
+      "quantity": 6.0,
+      "unit_price": 45.25,
+      "amount": 271.5
+    },
+    {
+      "sku": "HF-10000",
+      "description": "Chicken Breast, Boneless Skinless, Fresh (per lb)",
+      "quantity": 40.0,
+      "unit_price": 4.54,
+      "amount": 181.6
+    },
+    {
+      "sku": "HF-10959",
+      "description": "All-Purpose Flour, 50 lb Bag",
+      "quantity": 5.0,
+      "unit_price": 26.08,
+      "amount": 130.4
+    },
+    {
+      "sku": "HF-10137",
+      "description": "Roma Tomatoes, Case 25 lb",
+      "quantity": 1.0,
+      "unit_price": 26.17,
+      "amount": 26.17
+    },
+    {
+      "sku": "HF-11370",
+      "description": "Atlantic Salmon Fillet, Skin-On (per lb)",
+      "quantity": 72.0,
+      "unit_price": 13.0,
+      "amount": 936.0
+    },
+    {
+      "sku": "HF-11096",
+      "description": "Heavy Cream 36%, 1/2 Gallon",
+      "quantity": 1.0,
+      "unit_price": 6.45,
+      "amount": 6.45
+    },
+    {
+      "sku": "HF-10274",
+      "description": "Extra Virgin Olive Oil 3 L Tin",
+      "quantity": 8.0,
+      "unit_price": 42.95,
+      "amount": 343.6
+    },
+    {
+      "sku": "HF-10685",
+      "description": "Ground Beef 80/20 (per lb)",
+      "quantity": 73.0,
+      "unit_price": 5.48,
+      "amount": 400.04
+    },
+    {
+      "sku": "HF-10548",
+      "description": "Paper Napkins, 2-Ply Dinner, White, Pack of 3000",
+      "quantity": 3.0,
+      "unit_price": 53.25,
+      "amount": 159.75
+    },
+    {
+      "sku": "HF-10822",
+      "description": "Yellow Onions, 50 lb Sack",
+      "quantity": 1.0,
+      "unit_price": 31.82,
+      "amount": 31.82
+    },
+    {
+      "sku": "HF-10548",
+      "description": "Paper Napkins, 2-Ply Dinner, White, Pack of 3000",
+      "quantity": 10.0,
+      "unit_price": 54.66,
+      "amount": 546.6
+    },
+    {
+      "sku": "HF-10959",
+      "description": "All-Purpose Flour, 50 lb Bag",
+      "quantity": 5.0,
+      "unit_price": 21.97,
+      "amount": 109.85
+    },
+    {
+      "sku": "HF-11370",
+      "description": "Atlantic Salmon Fillet, Skin-On (per lb)",
+      "quantity": 61.0,
+      "unit_price": 12.64,
+      "amount": 771.04
+    },
+    {
+      "sku": "HF-11507",
+      "description": "Basil, Fresh, 1 lb",
+      "quantity": 2.0,
+      "unit_price": 13.13,
+      "amount": 26.26
+    },
+    {
+      "sku": "HF-10685",
+      "description": "Ground Beef 80/20 (per lb)",
+      "quantity": 41.0,
+      "unit_price": 3.75,
+      "amount": 153.75
+    },
+    {
+      "sku": "HF-11507",
+      "description": "Basil, Fresh, 1 lb",
+      "quantity": 1.0,
+      "unit_price": 12.6,
+      "amount": 12.6
+    },
+    {
+      "sku": "HF-10959",
+      "description": "All-Purpose Flour, 50 lb Bag",
+      "quantity": 24.0,
+      "unit_price": 23.61,
+      "amount": 566.64
+    },
+    {
+      "sku": "HF-11507",
+      "description": "Basil, Fresh, 1 lb",
+      "quantity": 3.0,
+      "unit_price": 9.37,
+      "amount": 28.11
+    },
+    {
+      "sku": "HF-10959",
+      "description": "All-Purpose Flour, 50 lb Bag",
+      "quantity": 24.0,
+      "unit_price": 19.22,
+      "amount": 461.28
+    },
+    {
+      "sku": "HF-10274",
+      "description": "Extra Virgin Olive Oil 3 L Tin",
+      "quantity": 1.0,
+      "unit_price": 36.35,
+      "amount": 36.35
+    },
+    {
+      "sku": "HF-11233",
+      "description": "Takeout Containers, Hinged, 9 x 9 in., Compostable, Case of 200",
+      "quantity": 3.0,
+      "unit_price": 51.48,
+      "amount": 154.44
+    },
+    {
+      "sku": "HF-10685",
+      "description": "Ground Beef 80/20 (per lb)",
+      "quantity": 9.5,
+      "unit_price": 5.02,
+      "amount": 47.69
+    },
+    {
+      "sku": "HF-10137",
+      "description": "Roma Tomatoes, Case 25 lb",
+      "quantity": 4.0,
+      "unit_price": 23.07,
+      "amount": 92.28
+    },
+    {
+      "sku": "HF-10959",
+      "description": "All-Purpose Flour, 50 lb Bag",
+      "quantity": 3.0,
+      "unit_price": 27.27,
+      "amount": 81.81
+    },
+    {
+      "sku": "HF-10274",
+      "description": "Extra Virgin Olive Oil 3 L Tin",
+      "quantity": 4.0,
+      "unit_price": 35.04,
+      "amount": 140.16
+    },
+    {
+      "sku": "HF-10685",
+      "description": "Ground Beef 80/20 (per lb)",
+      "quantity": 37.5,
+      "unit_price": 5.15,
+      "amount": 193.13
+    },
+    {
+      "sku": "HF-10822",
+      "description": "Yellow Onions, 50 lb Sack",
+      "quantity": 3.0,
+      "unit_price": 30.17,
+      "amount": 90.51
+    },
+    {
+      "sku": "HF-11370",
+      "description": "Atlantic Salmon Fillet, Skin-On (per lb)",
+      "quantity": 48.5,
+      "unit_price": 12.97,
+      "amount": 629.05
+    },
+    {
+      "sku": "HF-10959",
+      "description": "All-Purpose Flour, 50 lb Bag",
+      "quantity": 20.0,
+      "unit_price": 22.35,
+      "amount": 447.0
+    },
+    {
+      "sku": "HF-11096",
+      "description": "Heavy Cream 36%, 1/2 Gallon",
+      "quantity": 6.0,
+      "unit_price": 7.28,
+      "amount": 43.68
+    },
+    {
+      "sku": "HF-11507",
+      "description": "Basil, Fresh, 1 lb",
+      "quantity": 3.0,
+      "unit_price": 12.86,
+      "amount": 38.58
+    },
+    {
+      "sku": "HF-10000",
+      "description": "Chicken Breast, Boneless Skinless, Fresh (per lb)",
+      "quantity": 12.0,
+      "unit_price": 4.27,
+      "amount": 51.24
+    },
+    {
+      "sku": "HF-10822",
+      "description": "Yellow Onions, 50 lb Sack",
+      "quantity": 3.0,
+      "unit_price": 18.21,
+      "amount": 54.63
+    },
+    {
+      "sku": "HF-11370",
+      "description": "Atlantic Salmon Fillet, Skin-On (per lb)",
+      "quantity": 46.0,
+      "unit_price": 12.46,
+      "amount": 573.16
+    },
+    {
+      "sku": "HF-10822",
+      "description": "Yellow Onions, 50 lb Sack",
+      "quantity": 4.0,
+      "unit_price": 19.43,
+      "amount": 77.72
+    },
+    {
+      "sku": "HF-10137",
+      "description": "Roma Tomatoes, Case 25 lb",
+      "quantity": 20.0,
+      "unit_price": 33.53,
+      "amount": 670.6
+    },
+    {
+      "sku": "HF-11096",
+      "description": "Heavy Cream 36%, 1/2 Gallon",
+      "quantity": 1.0,
+      "unit_price": 8.63,
+      "amount": 8.63
+    },
+    {
+      "sku": "HF-11370",
+      "description": "Atlantic Salmon Fillet, Skin-On (per lb)",
+      "quantity": 36.5,
+      "unit_price": 8.14,
+      "amount": 297.11
+    },
+    {
+      "sku": "HF-10411",
+      "description": "Mozzarella, Whole Milk, Low Moisture, Shredded, 4 x 5 lb Bags per Case",
+      "quantity": 1.0,
+      "unit_price": 65.83,
+      "amount": 65.83
+    },
+    {
+      "sku": "HF-10685",
+      "description": "Ground Beef 80/20 (per lb)",
+      "quantity": 2.0,
+      "unit_price": 4.1,
+      "amount": 8.2
+    },
+    {
+      "sku": "HF-11233",
+      "description": "Takeout Containers, Hinged, 9 x 9 in., Compostable, Case of 200",
+      "quantity": 12.0,
+      "unit_price": 52.28,
+      "amount": 627.36
+    },
+    {
+      "sku": "HF-10274",
+      "description": "Extra Virgin Olive Oil 3 L Tin",
+      "quantity": 3.0,
+      "unit_price": 31.16,
+      "amount": 93.48
+    },
+    {
+      "sku": "HF-10822",
+      "description": "Yellow Onions, 50 lb Sack",
+      "quantity": 2.0,
+      "unit_price": 31.39,
+      "amount": 62.78
+    },
+    {
+      "sku": "HF-11507",
+      "description": "Basil, Fresh, 1 lb",
+      "quantity": 2.0,
+      "unit_price": 11.05,
+      "amount": 22.1
+    },
+    {
+      "sku": "HF-11370",
+      "description": "Atlantic Salmon Fillet, Skin-On (per lb)",
+      "quantity": 61.0,
+      "unit_price": 11.67,
+      "amount": 711.87
+    },
+    {
+      "sku": "HF-10685",
+      "description": "Ground Beef 80/20 (per lb)",
+      "quantity": 40.0,
+      "unit_price": 5.61,
+      "amount": 224.4
+    },
+    {
+      "sku": "HF-10822",
+      "description": "Yellow Onions, 50 lb Sack",
+      "quantity": 8.0,
+      "unit_price": 21.3,
+      "amount": 170.4
+    },
+    {
+      "sku": "HF-10274",
+      "description": "Extra Virgin Olive Oil 3 L Tin",
+      "quantity": 24.0,
+      "unit_price": 35.14,
+      "amount": 843.36
+    },
+    {
+      "sku": "HF-11370",
+      "description": "Atlantic Salmon Fillet, Skin-On (per lb)",
+      "quantity": 52.5,
+      "unit_price": 12.38,
+      "amount": 649.95
+    },
+    {
+      "sku": "HF-10548",
+      "description": "Paper Napkins, 2-Ply Dinner, White, Pack of 3000",
+      "quantity": 20.0,
+      "unit_price": 54.56,
+      "amount": 1091.2
+    },
+    {
+      "sku": "HF-11370",
+      "description": "Atlantic Salmon Fillet, Skin-On (per lb)",
+      "quantity": 40.5,
+      "unit_price": 8.85,
+      "amount": 358.43
+    },
+    {
+      "sku": "HF-10137",
+      "description": "Roma Tomatoes, Case 25 lb",
+      "quantity": 10.0,
+      "unit_price": 32.01,
+      "amount": 320.1
+    },
+    {
+      "sku": "HF-11233",
+      "description": "Takeout Containers, Hinged, 9 x 9 in., Compostable, Case of 200",
+      "quantity": 24.0,
+      "unit_price": 66.13,
+      "amount": 1587.12
+    },
+    {
+      "sku": "HF-10959",
+      "description": "All-Purpose Flour, 50 lb Bag",
+      "quantity": 4.0,
+      "unit_price": 24.72,
+      "amount": 98.88
+    },
+    {
+      "sku": "HF-10137",
+      "description": "Roma Tomatoes, Case 25 lb",
+      "quantity": 20.0,
+      "unit_price": 25.5,
+      "amount": 510.0
+    },
+    {
+      "sku": "HF-10137",
+      "description": "Roma Tomatoes, Case 25 lb",
+      "quantity": 8.0,
+      "unit_price": 22.35,
+      "amount": 178.8
+    },
+    {
+      "sku": "HF-10411",
+      "description": "Mozzarella, Whole Milk, Low Moisture, Shredded, 4 x 5 lb Bags per Case",
+      "quantity": 20.0,
+      "unit_price": 66.97,
+      "amount": 1339.4
+    },
+    {
+      "sku": "HF-10685",
+      "description": "Ground Beef 80/20 (per lb)",
+      "quantity": 59.0,
+      "unit_price": 3.91,
+      "amount": 230.69
+    },
+    {
+      "sku": "HF-10000",
+      "description": "Chicken Breast, Boneless Skinless, Fresh (per lb)",
+      "quantity": 48.5,
+      "unit_price": 3.08,
+      "amount": 149.38
+    },
+    {
+      "sku": "HF-11507",
+      "description": "Basil, Fresh, 1 lb",
+      "quantity": 5.0,
+      "unit_price": 14.08,
+      "amount": 70.4
+    },
+    {
+      "sku": "HF-10411",
+      "description": "Mozzarella, Whole Milk, Low Moisture, Shredded, 4 x 5 lb Bags per Case",
+      "quantity": 1.0,
+      "unit_price": 80.76,
+      "amount": 80.76
+    },
+    {
+      "sku": "HF-10137",
+      "description": "Roma Tomatoes, Case 25 lb",
+      "quantity": 5.0,
+      "unit_price": 33.31,
+      "amount": 166.55
+    },
+    {
+      "sku": "HF-10685",
+      "description": "Ground Beef 80/20 (per lb)",
+      "quantity": 5.0,
+      "unit_price": 4.93,
+      "amount": 24.65
+    },
+    {
+      "sku": "HF-10822",
+      "description": "Yellow Onions, 50 lb Sack",
+      "quantity": 5.0,
+      "unit_price": 18.72,
+      "amount": 93.6
+    },
+    {
+      "sku": "HF-11370",
+      "description": "Atlantic Salmon Fillet, Skin-On (per lb)",
+      "quantity": 59.0,
+      "unit_price": 11.2,
+      "amount": 660.8
+    },
+    {
+      "sku": "HF-10822",
+      "description": "Yellow Onions, 50 lb Sack",
+      "quantity": 2.0,
+      "unit_price": 27.15,
+      "amount": 54.3
+    },
+    {
+      "sku": "HF-11370",
+      "description": "Atlantic Salmon Fillet, Skin-On (per lb)",
+      "quantity": 30.0,
+      "unit_price": 10.44,
+      "amount": 313.2
+    },
+    {
+      "sku": "HF-10548",
+      "description": "Paper Napkins, 2-Ply Dinner, White, Pack of 3000",
+      "quantity": 20.0,
+      "unit_price": 43.18,
+      "amount": 863.6
+    },
+    {
+      "sku": "HF-10000",
+      "description": "Chicken Breast, Boneless Skinless, Fresh (per lb)",
+      "quantity": 16.0,
+      "unit_price": 3.43,
+      "amount": 54.88
+    },
+    {
+      "sku": "HF-11233",
+      "description": "Takeout Containers, Hinged, 9 x 9 in., Compostable, Case of 200",
+      "quantity": 2.0,
+      "unit_price": 53.2,
+      "amount": 106.4
+    },
+    {
+      "sku": "HF-11507",
+      "description": "Basil, Fresh, 1 lb",
+      "quantity": 1.0,
+      "unit_price": 13.14,
+      "amount": 13.14
+    },
+    {
+      "sku": "HF-11370",
+      "description": "Atlantic Salmon Fillet, Skin-On (per lb)",
+      "quantity": 34.0,
+      "unit_price": 10.83,
+      "amount": 368.22
+    },
+    {
+      "sku": "HF-11096",
+      "description": "Heavy Cream 36%, 1/2 Gallon",
+      "quantity": 10.0,
+      "unit_price": 7.48,
+      "amount": 74.8
+    },
+    {
+      "sku": "HF-11507",
+      "description": "Basil, Fresh, 1 lb",
+      "quantity": 5.0,
+      "unit_price": 11.9,
+      "amount": 59.5
+    },
+    {
+      "sku": "HF-11507",
+      "description": "Basil, Fresh, 1 lb",
+      "quantity": 1.0,
+      "unit_price": 13.69,
+      "amount": 13.69
+    },
+    {
+      "sku": "HF-10685",
+      "description": "Ground Beef 80/20 (per lb)",
+      "quantity": 21.0,
+      "unit_price": 5.22,
+      "amount": 109.62
+    },
+    {
+      "sku": "HF-10822",
+      "description": "Yellow Onions, 50 lb Sack",
+      "quantity": 2.0,
+      "unit_price": 27.99,
+      "amount": 55.98
+    },
+    {
+      "sku": "HF-11096",
+      "description": "Heavy Cream 36%, 1/2 Gallon",
+      "quantity": 2.0,
+      "unit_price": 8.01,
+      "amount": 16.02
+    },
+    {
+      "sku": "HF-10137",
+      "description": "Roma Tomatoes, Case 25 lb",
+      "quantity": 5.0,
+      "unit_price": 25.36,
+      "amount": 126.8
+    },
+    {
+      "sku": "HF-10274",
+      "description": "Extra Virgin Olive Oil 3 L Tin",
+      "quantity": 6.0,
+      "unit_price": 31.74,
+      "amount": 190.44
+    },
+    {
+      "sku": "HF-10000",
+      "description": "Chicken Breast, Boneless Skinless, Fresh (per lb)",
+      "quantity": 20.0,
+      "unit_price": 3.76,
+      "amount": 75.2
+    },
+    {
+      "sku": "HF-10685",
+      "description": "Ground Beef 80/20 (per lb)",
+      "quantity": 21.0,
+      "unit_price": 5.59,
+      "amount": 117.39
+    },
+    {
+      "sku": "HF-10959",
+      "description": "All-Purpose Flour, 50 lb Bag",
+      "quantity": 20.0,
+      "unit_price": 25.95,
+      "amount": 519.0
+    },
+    {
+      "sku": "HF-10822",
+      "description": "Yellow Onions, 50 lb Sack",
+      "quantity": 24.0,
+      "unit_price": 30.18,
+      "amount": 724.32
+    },
+    {
+      "sku": "HF-11507",
+      "description": "Basil, Fresh, 1 lb",
+      "quantity": 40.0,
+      "unit_price": 11.83,
+      "amount": 473.2
+    },
+    {
+      "sku": "HF-11507",
+      "description": "Basil, Fresh, 1 lb",
+      "quantity": 1.0,
+      "unit_price": 12.03,
+      "amount": 12.03
+    },
+    {
+      "sku": "HF-11233",
+      "description": "Takeout Containers, Hinged, 9 x 9 in., Compostable, Case of 200",
+      "quantity": 12.0,
+      "unit_price": 68.62,
+      "amount": 823.44
+    },
+    {
+      "sku": "HF-11233",
+      "description": "Takeout Containers, Hinged, 9 x 9 in., Compostable, Case of 200",
+      "quantity": 10.0,
+      "unit_price": 53.55,
+      "amount": 535.5
+    },
+    {
+      "sku": "HF-11507",
+      "description": "Basil, Fresh, 1 lb",
+      "quantity": 20.0,
+      "unit_price": 15.36,
+      "amount": 307.2
+    },
+    {
+      "sku": "HF-10411",
+      "description": "Mozzarella, Whole Milk, Low Moisture, Shredded, 4 x 5 lb Bags per Case",
+      "quantity": 10.0,
+      "unit_price": 65.01,
+      "amount": 650.1
+    },
+    {
+      "sku": "HF-10959",
+      "description": "All-Purpose Flour, 50 lb Bag",
+      "quantity": 24.0,
+      "unit_price": 25.08,
+      "amount": 601.92
+    },
+    {
+      "sku": "HF-10822",
+      "description": "Yellow Onions, 50 lb Sack",
+      "quantity": 40.0,
+      "unit_price": 25.57,
+      "amount": 1022.8
+    },
+    {
+      "sku": "HF-10274",
+      "description": "Extra Virgin Olive Oil 3 L Tin",
+      "quantity": 1.0,
+      "unit_price": 39.51,
+      "amount": 39.51
+    },
+    {
+      "sku": "HF-10822",
+      "description": "Yellow Onions, 50 lb Sack",
+      "quantity": 24.0,
+      "unit_price": 27.69,
+      "amount": 664.56
+    },
+    {
+      "sku": "HF-10685",
+      "description": "Ground Beef 80/20 (per lb)",
+      "quantity": 46.0,
+      "unit_price": 3.65,
+      "amount": 167.9
+    },
+    {
+      "sku": "HF-11096",
+      "description": "Heavy Cream 36%, 1/2 Gallon",
+      "quantity": 5.0,
+      "unit_price": 8.47,
+      "amount": 42.35
+    },
+    {
+      "sku": "HF-10274",
+      "description": "Extra Virgin Olive Oil 3 L Tin",
+      "quantity": 4.0,
+      "unit_price": 43.09,
+      "amount": 172.36
+    },
+    {
+      "sku": "HF-11370",
+      "description": "Atlantic Salmon Fillet, Skin-On (per lb)",
+      "quantity": 13.5,
+      "unit_price": 10.53,
+      "amount": 142.16
+    },
+    {
+      "sku": "HF-11096",
+      "description": "Heavy Cream 36%, 1/2 Gallon",
+      "quantity": 1.0,
+      "unit_price": 6.71,
+      "amount": 6.71
+    },
+    {
+      "sku": "HF-10548",
+      "description": "Paper Napkins, 2-Ply Dinner, White, Pack of 3000",
+      "quantity": 5.0,
+      "unit_price": 51.1,
+      "amount": 255.5
+    },
+    {
+      "sku": "HF-11096",
+      "description": "Heavy Cream 36%, 1/2 Gallon",
+      "quantity": 6.0,
+      "unit_price": 9.39,
+      "amount": 56.34
+    },
+    {
+      "sku": "HF-11370",
+      "description": "Atlantic Salmon Fillet, Skin-On (per lb)",
+      "quantity": 18.5,
+      "unit_price": 12.41,
+      "amount": 229.59
+    },
+    {
+      "sku": "HF-10274",
+      "description": "Extra Virgin Olive Oil 3 L Tin",
+      "quantity": 2.0,
+      "unit_price": 37.57,
+      "amount": 75.14
+    },
+    {
+      "sku": "HF-10137",
+      "description": "Roma Tomatoes, Case 25 lb",
+      "quantity": 1.0,
+      "unit_price": 31.51,
+      "amount": 31.51
+    },
+    {
+      "sku": "HF-11096",
+      "description": "Heavy Cream 36%, 1/2 Gallon",
+      "quantity": 1.0,
+      "unit_price": 7.69,
+      "amount": 7.69
+    },
+    {
+      "sku": "HF-10685",
+      "description": "Ground Beef 80/20 (per lb)",
+      "quantity": 55.5,
+      "unit_price": 3.61,
+      "amount": 200.36
+    },
+    {
+      "sku": "HF-10548",
+      "description": "Paper Napkins, 2-Ply Dinner, White, Pack of 3000",
+      "quantity": 24.0,
+      "unit_price": 58.58,
+      "amount": 1405.92
+    },
+    {
+      "sku": "HF-10685",
+      "description": "Ground Beef 80/20 (per lb)",
+      "quantity": 8.0,
+      "unit_price": 4.92,
+      "amount": 39.36
+    },
+    {
+      "sku": "HF-10274",
+      "description": "Extra Virgin Olive Oil 3 L Tin",
+      "quantity": 8.0,
+      "unit_price": 36.56,
+      "amount": 292.48
+    },
+    {
+      "sku": "HF-10000",
+      "description": "Chicken Breast, Boneless Skinless, Fresh (per lb)",
+      "quantity": 45.0,
+      "unit_price": 3.24,
+      "amount": 145.8
+    },
+    {
+      "sku": "HF-10959",
+      "description": "All-Purpose Flour, 50 lb Bag",
+      "quantity": 6.0,
+      "unit_price": 26.95,
+      "amount": 161.7
+    },
+    {
+      "sku": "HF-11370",
+      "description": "Atlantic Salmon Fillet, Skin-On (per lb)",
+      "quantity": 71.0,
+      "unit_price": 11.63,
+      "amount": 825.73
+    },
+    {
+      "sku": "HF-11096",
+      "description": "Heavy Cream 36%, 1/2 Gallon",
+      "quantity": 3.0,
+      "unit_price": 9.27,
+      "amount": 27.81
+    },
+    {
+      "sku": "HF-10959",
+      "description": "All-Purpose Flour, 50 lb Bag",
+      "quantity": 10.0,
+      "unit_price": 21.31,
+      "amount": 213.1
+    },
+    {
+      "sku": "HF-10685",
+      "description": "Ground Beef 80/20 (per lb)",
+      "quantity": 55.5,
+      "unit_price": 5.16,
+      "amount": 286.38
+    },
+    {
+      "sku": "HF-10822",
+      "description": "Yellow Onions, 50 lb Sack",
+      "quantity": 6.0,
+      "unit_price": 31.53,
+      "amount": 189.18
+    },
+    {
+      "sku": "HF-10548",
+      "description": "Paper Napkins, 2-Ply Dinner, White, Pack of 3000",
+      "quantity": 20.0,
+      "unit_price": 54.92,
+      "amount": 1098.4
+    },
+    {
+      "sku": "HF-11096",
+      "description": "Heavy Cream 36%, 1/2 Gallon",
+      "quantity": 5.0,
+      "unit_price": 7.67,
+      "amount": 38.35
+    },
+    {
+      "sku": "HF-10959",
+      "description": "All-Purpose Flour, 50 lb Bag",
+      "quantity": 5.0,
+      "unit_price": 25.43,
+      "amount": 127.15
+    },
+    {
+      "sku": "HF-11507",
+      "description": "Basil, Fresh, 1 lb",
+      "quantity": 2.0,
+      "unit_price": 10.21,
+      "amount": 20.42
+    },
+    {
+      "sku": "HF-10685",
+      "description": "Ground Beef 80/20 (per lb)",
+      "quantity": 30.5,
+      "unit_price": 4.59,
+      "amount": 140.0
+    },
+    {
+      "sku": "HF-10822",
+      "description": "Yellow Onions, 50 lb Sack",
+      "quantity": 8.0,
+      "unit_price": 19.48,
+      "amount": 155.84
+    },
+    {
+      "sku": "HF-10411",
+      "description": "Mozzarella, Whole Milk, Low Moisture, Shredded, 4 x 5 lb Bags per Case",
+      "quantity": 8.0,
+      "unit_price": 59.27,
+      "amount": 474.16
+    },
+    {
+      "sku": "",
+      "description": "Loyalty discount",
+      "quantity": 1.0,
+      "unit_price": -25.0,
+      "amount": -25.0
+    },
+    {
+      "sku": "",
+      "description": "Delivery charge",
+      "quantity": 1.0,
+      "unit_price": 45.0,
+      "amount": 45.0
+    }
+  ],
+  "subtotal": 58376.75,
+  "tax": 4378.26,
+  "total": 62755.01
+}

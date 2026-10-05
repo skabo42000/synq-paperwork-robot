@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paperwork Robot</title>
+<link rel="icon" href="data:,">
+<style>
+  :root {
+    --bg: #f5f6f8; --panel: #ffffff; --text: #1b2130; --muted: #5b6477; --line: #e2e5eb;
+    --accent: #2c64e8; --accent-text: #ffffff; --accent-soft: #e8efff;
+    --ok: #177245; --ok-bg: #e5f4eb; --warn: #8f5200; --warn-bg: #fff3dd; --bad: #b42318; --bad-bg: #fdeceb;
+    --chip: #eef0f4; --row-flag: #fff8e8; --row-done: #f2faf5; --shadow: 0 1px 2px rgba(16,24,40,.05), 0 2px 6px rgba(16,24,40,.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e1218; --panel: #161b24; --text: #e7eaf0; --muted: #9ba4b4; --line: #283040;
+      --accent: #6b95ff; --accent-text: #0b1020; --accent-soft: #1c2640;
+      --ok: #5fd39a; --ok-bg: #123022; --warn: #f3b760; --warn-bg: #2e2412; --bad: #ff8a80; --bad-bg: #3b1a18;
+      --chip: #212835; --row-flag: #2a2314; --row-done: #14241c; --shadow: none;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--text);
+    font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  button, input { font: inherit; color: inherit; }
+  a { color: var(--accent); }
+  .hidden { display: none !important; }
+  .muted { color: var(--muted); }
+  .small { font-size: 13px; }
+
+  header { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 12px 20px;
+    background: var(--panel); border-bottom: 1px solid var(--line); }
+  header h1 { font-size: 18px; margin: 0; letter-spacing: -.01em; }
+  header .spacer { flex: 1; }
+  .badge { font-size: 12px; padding: 3px 9px; border-radius: 999px; background: var(--warn-bg); color: var(--warn); }
+
+  .btn { border: 1px solid var(--line); background: var(--panel); border-radius: 8px; padding: 7px 13px; cursor: pointer; }
+  .btn:hover { border-color: var(--muted); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-text); font-weight: 600; }
+  .btn.primary:disabled { opacity: .45; cursor: not-allowed; }
+  .btn.link { border: none; background: none; color: var(--accent); padding: 4px 6px; }
+  .btn.danger { color: var(--bad); }
+
+  main { display: grid; grid-template-columns: 320px 1fr; gap: 20px; padding: 20px; max-width: 1500px; margin: 0 auto; }
+  @media (max-width: 900px) { main { grid-template-columns: minmax(0, 1fr); padding: 16px; } }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); }
+
+  #login { max-width: 380px; margin: 12vh auto; padding: 28px; }
+  #login h2 { margin: 0 0 6px; font-size: 20px; }
+  #login input { width: 100%; padding: 10px 12px; margin: 14px 0 10px; border: 1px solid var(--line);
+    border-radius: 8px; background: var(--bg); }
+  .error { color: var(--bad); font-size: 14px; min-height: 20px; }
+
+  #drop { display: block; border: 2px dashed var(--line); border-radius: 12px; padding: 22px 16px; text-align: center; cursor: pointer;
+    background: var(--panel); transition: border-color .15s, background .15s; }
+  #drop.over, #drop:hover { border-color: var(--accent); background: var(--accent-soft); }
+  #drop strong { display: block; margin-bottom: 4px; }
+  #uploads { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+  .job { padding: 11px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel); cursor: pointer; text-align: left; width: 100%; }
+  .job:hover { border-color: var(--muted); }
+  .job.active { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
+  .job .name { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .job .meta { display: flex; justify-content: space-between; gap: 8px; margin-top: 4px; font-size: 13px; color: var(--muted); }
+
+  .chip { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 9px; border-radius: 999px; background: var(--chip); white-space: nowrap; }
+  .chip.ok { background: var(--ok-bg); color: var(--ok); }
+  .chip.warn { background: var(--warn-bg); color: var(--warn); }
+  .chip.bad { background: var(--bad-bg); color: var(--bad); }
+
+  #detail { padding: 22px; min-height: 420px; }
+  #detail h2 { margin: 0 0 4px; font-size: 20px; word-break: break-word; }
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 18px 0; }
+  .fact { padding: 12px; border: 1px solid var(--line); border-radius: 10px; }
+  .fact .label { font-size: 12px; color: var(--muted); }
+  .fact .value { font-size: 16px; font-weight: 600; word-break: break-word; }
+  .notice { padding: 12px 14px; border-radius: 10px; margin: 14px 0; }
+  .notice.ok { background: var(--ok-bg); color: var(--ok); }
+  .notice.warn { background: var(--warn-bg); color: var(--warn); }
+  .notice.bad { background: var(--bad-bg); color: var(--bad); }
+  .notice ul { margin: 6px 0 0; padding-left: 20px; }
+  .spinner { width: 18px; height: 18px; border: 3px solid var(--line); border-top-color: var(--accent); border-radius: 50%;
+    display: inline-block; vertical-align: -4px; margin-right: 8px; animation: spin .8s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 18px; }
+  .step { padding: 14px; border: 1px solid var(--line); border-radius: 10px; }
+  .step b { display: block; margin-bottom: 4px; }
+
+  .review { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 18px; margin-top: 12px; }
+  @media (max-width: 1200px) { .review { grid-template-columns: minmax(0, 1fr); } }
+  .viewer { position: sticky; top: 12px; align-self: start; }
+  .viewer .bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+  .imgbox { overflow: auto; max-height: 80vh; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+  .imgbox img { display: block; width: 100%; min-height: 200px; cursor: zoom-in; }
+  .imgbox.zoom img { width: 230%; cursor: zoom-out; }
+  @media (max-width: 1200px) { .viewer { position: static; } }
+
+  .fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 14px; }
+  label.field { font-size: 12px; color: var(--muted); display: flex; flex-direction: column; gap: 3px; }
+  input.cell, label.field input { border: 1px solid var(--line); border-radius: 6px; padding: 5px 7px; background: var(--panel); width: 100%; min-width: 0; }
+  input.invalid { border-color: var(--bad); background: var(--bad-bg); }
+  input.changed { border-color: var(--accent); }
+
+  .tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; max-height: 70vh; }
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+  th { position: sticky; top: 0; background: var(--panel); text-align: left; font-weight: 600; font-size: 12px; color: var(--muted);
+    padding: 8px 6px; border-bottom: 1px solid var(--line); z-index: 1; }
+  td { padding: 4px 6px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+  tr.flag td { background: var(--row-flag); }
+  tr.flag.done td { background: var(--row-done); }
+  tr.note td { font-size: 12.5px; color: var(--warn); padding-top: 0; }
+  tr.flag.done + tr.note td { color: var(--ok); }
+  td.num { width: 1%; white-space: nowrap; color: var(--muted); cursor: pointer; }
+  td.num:hover { color: var(--accent); text-decoration: underline; }
+  /* Minimum widths so no column gets squeezed; on narrow screens the table scrolls sideways instead. */
+  table.lines { min-width: 640px; }
+  table.lines td { padding: 4px; }
+  .w-code { min-width: 92px; width: 92px; } .w-qty { min-width: 58px; width: 58px; }
+  .w-money { min-width: 86px; width: 86px; } .w-desc { min-width: 200px; }
+  .toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 12px 0 8px; }
+  .toolbar .spacer { flex: 1; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .seg button { border: none; background: var(--panel); padding: 6px 12px; cursor: pointer; }
+  .seg button.on { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+  .savebar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+  .savebar .why { flex: 1; min-width: 200px; font-size: 13px; color: var(--muted); }
+
+  .extras { font-size: 12px; color: var(--muted); margin-top: 3px; line-height: 1.3; }
+  .colbox { padding: 12px 14px; margin: 0 0 14px; box-shadow: none; }
+  .colbox summary { cursor: pointer; font-weight: 600; }
+  .colbox ul { margin: 10px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+  #toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--text); color: var(--bg);
+    padding: 10px 16px; border-radius: 10px; font-size: 14px; max-width: min(520px, calc(100vw - 32px)); z-index: 10; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Paperwork Robot</h1>
+  <span class="badge">Test version: please upload sample invoices only</span>
+  <span class="spacer"></span>
+  <a id="sheetLink" class="btn link hidden" target="_blank" rel="noopener">Open Google Sheet</a>
+  <button id="logout" class="btn link hidden">Log out</button>
+</header>
+
+<form id="login" class="panel hidden">
+  <h2>Sign in</h2>
+  <div class="muted small">Enter the portal password.</div>
+  <input id="pw" type="password" autocomplete="current-password" placeholder="Password" required>
+  <div id="loginError" class="error"></div>
+  <button class="btn primary" type="submit">Sign in</button>
+</form>
+
+<main id="app" class="hidden">
+  <aside>
+    <label id="drop">
+      <input id="file" type="file" accept="application/pdf,.pdf,image/jpeg,.jpg,.jpeg,image/png,.png,image/heic,image/heif,.heic,.heif" multiple class="hidden">
+      <strong>Drop invoice PDFs or phone photos here</strong>
+      <span class="muted small">or click to choose files · PDF, JPG, PNG or HEIC (iPhone) · up to 60 pages · 20 MB</span>
+    </label>
+    <div id="uploads"></div>
+  </aside>
+  <section id="detail" class="panel"></section>
+</main>
+
+<div id="toast" class="hidden"></div>
+
+<script>
+"use strict";
+// ---------- small helpers ----------
+const $ = (id) => document.getElementById(id);
+function el(tag, attrs = {}, ...children) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") e.className = v;
+    else if (k.startsWith("on")) e.addEventListener(k.slice(2), v);
+    else if (v === true) e.setAttribute(k, "");
+    else if (v !== false && v != null) e.setAttribute(k, v);
+  }
+  for (const c of children.flat()) {
+    if (c == null || c === false) continue;
+    e.append(c instanceof Node ? c : document.createTextNode(String(c)));  // text only: never HTML
+  }
+  return e;
+}
+const saved = {  // browser storage can be blocked (private windows): never let that break the page
+  get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch {} },
+  del(k) { try { localStorage.removeItem(k); } catch {} },
+};
+const money = (x, cur) => (typeof x === "number" && isFinite(x))
+  ? x.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + (cur ? " " + cur : "") : "–";
+const when = (iso) => { const d = new Date(iso); return isNaN(d) ? "" : d.toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" }); };
+let toastTimer;
+function toast(msg) {
+  const t = $("toast"); t.textContent = msg; t.classList.remove("hidden");
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.add("hidden"), 5000);
+}
+
+const STATUS = {
+  "queued":       ["Waiting", ""],
+  "reading":      ["Reading…", ""],
+  "verified":     ["Checked", "ok"],
+  "needs review": ["Needs your check", "warn"],
+  "saved":        ["Saved", "ok"],
+  "duplicate":    ["Already in the sheet", "ok"],
+  "save failed":  ["Not saved yet", "bad"],
+  "failed":       ["Couldn't read", "bad"],
+};
+const chip = (status) => { const [label, kind] = STATUS[status] || [status, ""]; return el("span", { class: "chip " + kind }, label); };
+const unfinished = (s) => s === "queued" || s === "reading";
+const busy = (s) => unfinished(s) || s === "verified";  // "verified" lasts a few seconds while it's saved to the sheet
+const reviewable = (s) => s === "needs review" || s === "save failed";
+
+// ---------- talking to the server ----------
+let password = saved.get("portal-pw") || "";
+async function api(path, { method = "GET", json, body } = {}) {
+  const headers = { "X-API-Key": password };
+  if (json !== undefined) headers["Content-Type"] = "application/json";
+  const r = await fetch(path, { method, headers, body: json !== undefined ? JSON.stringify(json) : body });
+  if (r.status === 401) { showLogin("Wrong password. Please try again."); throw new Error("signed out"); }
+  const data = (r.headers.get("content-type") || "").includes("application/json") ? await r.json() : null;
+  if (!r.ok) {
+    const err = new Error(typeof data?.detail === "string" ? data.detail : "Something went wrong (" + r.status + ").");
+    err.status = r.status; err.data = data; throw err;
+  }
+  return data;
+}
+
+// ---------- sign in ----------
+function showLogin(message = "") {
+  password = ""; saved.del("portal-pw");
+  $("app").classList.add("hidden"); $("logout").classList.add("hidden"); $("sheetLink").classList.add("hidden");
+  $("login").classList.remove("hidden"); $("loginError").textContent = message; $("pw").value = ""; $("pw").focus();
+}
+$("login").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  password = $("pw").value;
+  try { await start(); saved.set("portal-pw", password); } catch (err) { if (err.message !== "signed out") $("loginError").textContent = err.message; }
+});
+$("logout").addEventListener("click", () => showLogin());
+
+async function start() {
+  await refreshList();
+  $("login").classList.add("hidden"); $("app").classList.remove("hidden"); $("logout").classList.remove("hidden");
+  if (!selectedId) renderWelcome();
+}
+
+// ---------- the list of uploads ----------
+let jobs = [], selectedId = null, listTimer = null;
+async function refreshList() {
+  const data = await api("/api/jobs");
+  jobs = data.jobs;
+  if (data.sheet_url && !data.sheet_url.endsWith("/d//edit")) { $("sheetLink").href = data.sheet_url; $("sheetLink").classList.remove("hidden"); }
+  renderList();
+  clearTimeout(listTimer);
+  if (jobs.some((j) => busy(j.status))) listTimer = setTimeout(() => refreshList().catch(() => {}), 3000);
+}
+function renderList() {
+  const box = $("uploads"); box.replaceChildren();
+  if (!jobs.length) { box.append(el("div", { class: "muted small" }, "No uploads yet.")); return; }
+  for (const j of jobs) {
+    const title = j.supplier ? j.supplier + (j.invoice_number ? " · " + j.invoice_number : "") : j.file_name;
+    const sub = unfinished(j.status) ? (j.progress || "Waiting in line")
+      : j.status === "needs review" ? (j.flagged ? j.flagged + " of " + j.lines + " lines to check" : "Totals need a look")
+      : j.lines ? j.lines + " lines · " + money(j.total, j.currency) : j.file_name;
+    box.append(el("button", { class: "job" + (j.id === selectedId ? " active" : ""), onclick: () => select(j.id) },
+      el("div", { class: "name", title: j.file_name }, title),
+      el("div", { class: "meta" }, el("span", {}, sub), chip(j.status))));
+  }
+}
+
+// ---------- uploading ----------
+const drop = $("drop");
+$("file").addEventListener("change", (e) => { uploadFiles([...e.target.files]); e.target.value = ""; });
+["dragenter", "dragover"].forEach((t) => drop.addEventListener(t, (e) => { e.preventDefault(); drop.classList.add("over"); }));
+["dragleave", "drop"].forEach((t) => drop.addEventListener(t, (e) => { e.preventDefault(); drop.classList.remove("over"); }));
+drop.addEventListener("drop", (e) => uploadFiles([...e.dataTransfer.files]));
+async function uploadFiles(files) {
+  let last = null;
+  for (const f of files) {
+    const form = new FormData(); form.append("file", f);
+    try { last = await api("/api/jobs", { method: "POST", body: form }); toast("Uploaded " + f.name + ". Reading it now…"); }
+    catch (err) { if (err.message !== "signed out") toast(f.name + ": " + err.message); }
+  }
+  await refreshList().catch(() => {});
+  if (last) select(last.id);
+}
+
+// ---------- one upload ----------
+let job = null, detailTimer = null;
+async function select(id) {
+  selectedId = id; renderList();
+  clearTimeout(detailTimer);
+  try { job = await api("/api/jobs/" + id); } catch (err) { if (err.message !== "signed out") toast(err.message); return; }
+  if (unfinished(job.status)) { renderProgress(); detailTimer = setTimeout(() => select(id), 2000); return; }
+  if (reviewable(job.status)) startReview(); else renderResult();
+  if (job.status === "verified") detailTimer = setTimeout(() => select(id), 2000);  // being saved right now
+}
+
+function renderWelcome() {
+  $("detail").replaceChildren(
+    el("h2", {}, "Turn invoice PDFs into spreadsheet rows"),
+    el("div", { class: "muted" }, "Upload a supplier invoice. Every line is read and double-checked before it reaches your Google Sheet."),
+    el("div", { class: "steps" },
+      el("div", { class: "step" }, el("b", {}, "1. Upload"), "Drop in a PDF, even a long scanned one."),
+      el("div", { class: "step" }, el("b", {}, "2. Checked line by line"), "Totals, prices and quantities must all add up. Anything unsure is marked for you."),
+      el("div", { class: "step" }, el("b", {}, "3. Saved"), "Fully checked invoices go straight to your sheet. The rest wait for a quick look from you.")));
+}
+
+function header(extra) {
+  const inv = job.invoice || {};
+  return [
+    el("div", { class: "toolbar" },
+      el("div", {}, el("h2", {}, inv.supplier_name ? inv.supplier_name + (inv.invoice_number ? " · " + inv.invoice_number : "") : job.file_name),
+        el("div", { class: "muted small" }, job.file_name + " · " + job.pages + (job.pages === 1 ? " page" : " pages") + " · uploaded " + when(job.created))),
+      el("span", { class: "spacer" }), chip(job.status), extra || null),
+  ];
+}
+
+function renderProgress() {
+  $("detail").replaceChildren(...header(),
+    el("div", { class: "notice" }, el("span", { class: "spinner" }), job.progress || "Waiting in line"),
+    el("div", { class: "muted small" }, "Long scanned invoices can take a few minutes. You can upload more files meanwhile."));
+}
+
+function deleteButton() {
+  return el("button", { class: "btn link danger", onclick: async () => {
+    if (!confirm("Remove this upload and its file from the portal? (Rows already in the Google Sheet stay there.)")) return;
+    try { await api("/api/jobs/" + job.id, { method: "DELETE" }); selectedId = null; job = null; await refreshList(); renderWelcome(); }
+    catch (err) { toast(err.message); }
+  } }, "Remove");
+}
+
+function renderResult() {
+  const inv = job.invoice || {}, rep = job.report || {};
+  const kind = job.status === "failed" || job.status === "save failed" ? "bad" : job.status === "needs review" ? "warn" : "ok";
+  const by = job.saved_as === "approved" ? "Checked and approved by a person." : job.saved_as === "verified" ? "Every line was proven by the automatic checks." : "";
+  const parts = [...header(deleteButton()), el("div", { class: "notice " + kind }, job.message, by ? el("div", { class: "small" }, by) : null)];
+  if (job.invoice) {
+    parts.push(el("div", { class: "facts" },
+      fact("Invoice date", inv.invoice_date), fact("Lines", (inv.lines || []).length),
+      fact("Subtotal", money(inv.subtotal, inv.currency)), fact("Tax", money(inv.tax, inv.currency)), fact("Total", money(inv.total, inv.currency))));
+    if (inv.totals_rows && inv.totals_rows.length)
+      parts.push(el("div", { class: "small muted", style: "margin-bottom:10px" }, "Between the subtotal and the total: " + totalsRowsText(inv)));
+    const box = columnsBox(rep);
+    if (box) parts.push(box);
+    const lines = inv.lines || [];
+    const shown = lines.slice(0, 50);
+    const disc = hasDiscounts(inv);
+    parts.push(el("div", { class: "tablewrap" }, el("table", {},
+      el("thead", {}, el("tr", {}, ["#", "Item code", "Description", "Qty", "Unit price", ...(disc ? ["Disc %", "Disc"] : []), "Amount"].map((h) => el("th", {}, h)))),
+      el("tbody", {}, shown.map((l, i) => el("tr", {}, el("td", { class: "num" }, i + 1), el("td", {}, l.sku),
+        el("td", {}, l.description, extrasText(l) ? el("div", { class: "extras" }, extrasText(l)) : null),
+        el("td", {}, l.quantity), el("td", {}, money(l.unit_price)),
+        disc ? el("td", {}, l.discount_percent ? l.discount_percent + "%" : "") : null,
+        disc ? el("td", {}, l.discount_amount ? money(l.discount_amount) : "") : null,
+        el("td", {}, money(l.amount))))))));
+    if (lines.length > shown.length) parts.push(el("div", { class: "muted small", style: "margin-top:6px" }, "Showing the first 50 of " + lines.length + " lines. All of them are in the Google Sheet."));
+  }
+  $("detail").replaceChildren(...parts);
+}
+const fact = (label, value) => el("div", { class: "fact" }, el("div", { class: "label" }, label), el("div", { class: "value" }, value ?? "–"));
+
+// ---------- the review screen ----------
+let draft, flagged, checked, bad, showAll, page, problems, acceptSupplier, checkTimer;
+const pageCache = new Map();
+
+function startReview() {
+  draft = structuredClone(job.invoice);
+  const rep = job.report || {};
+  flagged = new Set((rep.line_flags || []).map((f, i) => f ? i : -1).filter((i) => i >= 0));
+  checked = new Set(); bad = new Set(); showAll = flagged.size === 0; problems = null; acceptSupplier = false;  // null = still checking
+  page = (rep.line_pages || [])[[...flagged][0]] || 1;
+  renderReview();
+  recheck();
+}
+
+function renderReview() {
+  const inv = draft, rep = job.report || {};
+  const numField = (name, label) => field(label, typeof inv[name] === "number" ? inv[name].toFixed(2) : inv[name],
+    (v, input) => setNumber(inv, name, v, "h:" + name, input));
+  const textField = (name, label, ph) => field(label, inv[name], (v) => { inv[name] = v; changed(); }, ph);
+
+  const viewer = el("div", { class: "viewer" },
+    el("div", { class: "bar" },
+      el("button", { class: "btn", onclick: () => showPage(page - 1), disabled: page <= 1 }, "‹ Previous"),
+      el("span", { class: "small muted", id: "pageLabel" }, "Page " + page + " of " + job.pages),
+      el("button", { class: "btn", onclick: () => showPage(page + 1), disabled: page >= job.pages }, "Next ›")),
+    el("div", { class: "imgbox", title: "Click to zoom", onclick: (e) => e.currentTarget.classList.toggle("zoom") },
+      el("img", { id: "pageImg", alt: "Invoice page " + page })),
+    el("div", { class: "small muted", style: "margin-top:4px" }, "Click the page to zoom in."));
+
+  const intro = flagged.size
+    ? el("div", { class: "notice warn" }, flagged.size + (flagged.size === 1 ? " line needs" : " lines need") + " your check. Compare each highlighted line with the invoice page, correct it if needed, and tick it.",
+        rep.problems && rep.problems.length ? el("details", { class: "small" }, el("summary", {}, "What the checks found"), el("ul", {}, rep.problems.slice(0, 30).map((p) => el("li", {}, p)))) : null)
+    : el("div", { class: "notice warn" }, "Every line matches the invoice, but the invoice as a whole needs your look before saving:",
+        el("ul", {}, (rep.problems || []).slice(0, 10).map((p) => el("li", {}, p))));
+
+  const form = el("div", {},
+    el("div", { class: "fields" },
+      textField("supplier_name", "Supplier"), textField("invoice_number", "Invoice number"),
+      textField("invoice_date", "Invoice date", "YYYY-MM-DD"), textField("currency", "Currency", "USD"),
+      numField("subtotal", "Subtotal"), numField("tax", "Tax"), numField("total", "Total")),
+    inv.totals_rows && inv.totals_rows.length
+      ? el("div", { class: "small muted" }, "Between the subtotal and the total, the invoice lists: " + totalsRowsText(inv)) : null,
+    el("div", { class: "toolbar" },
+      el("div", { class: "seg" },
+        el("button", { class: showAll ? "" : "on", onclick: () => { showAll = false; renderReview(); } }, "Lines to check (" + flagged.size + ")"),
+        el("button", { class: showAll ? "on" : "", onclick: () => { showAll = true; renderReview(); } }, "All lines (" + inv.lines.length + ")")),
+      el("span", { class: "spacer" }),
+      flagged.size ? el("span", { class: "small muted", id: "progressCount" }) : null,
+      flagged.size ? el("button", { class: "btn", onclick: tickShown }, "Tick all shown") : null),
+    el("div", { class: "tablewrap" }, linesTable()),
+    el("div", { class: "small muted", id: "sumLine", style: "margin-top:6px" }),
+    el("div", { id: "problemBox" }),
+    el("div", { class: "savebar" },
+      el("label", { id: "acceptBox", class: "small hidden" },
+        el("input", { type: "checkbox", onchange: (e) => { acceptSupplier = e.target.checked; updateSave(); } }),
+        " The supplier's own invoice has these errors. Save it exactly as printed."),
+      el("span", { class: "why", id: "why" }),
+      el("button", { class: "btn primary", id: "saveBtn", onclick: approve }, "Approve & save to sheet")));
+
+  $("detail").replaceChildren(...header(deleteButton()), intro, columnsBox(rep) || "", el("div", { class: "review" }, viewer, form));
+  showPage(page);
+  renderProblems();
+}
+
+function field(label, value, onInput, placeholder) {
+  return el("label", { class: "field" }, label,
+    el("input", { value: value ?? "", placeholder: placeholder || false, oninput: (e) => onInput(e.target.value, e.target) }));
+}
+
+function parseNumber(text) {
+  const t = String(text).trim().replace(/[$,\s]/g, "");
+  const neg = /^\(.*\)$/.test(t);
+  const n = Number(t.replace(/[()]/g, ""));
+  return t === "" || isNaN(n) ? NaN : (neg ? -n : n);
+}
+function setNumber(obj, key, text, badKey, input) {
+  const n = parseNumber(text);
+  if (isNaN(n)) bad.add(badKey); else { bad.delete(badKey); obj[key] = n; }
+  if (input) input.classList.toggle("invalid", isNaN(n));
+  changed();
+}
+
+const OPTIONAL = new Set(["discount_percent", "discount_amount"]);  // may be left empty
+const hasDiscounts = (inv) => (inv.lines || []).some((l) => l.discount_percent || l.discount_amount);
+
+// Everything else printed with the line (unit of measure, tax code...), so nothing is hidden.
+function extrasText(l) {
+  return (l.other_columns || []).map((c) => c.column + ": " + c.value).join(" · ");
+}
+
+function linesTable() {
+  const rep = job.report || {};
+  const disc = hasDiscounts(job.invoice);
+  const heads = ["#", "Item code", "Description", "Qty", "Unit price", ...(disc ? ["Disc %", "Disc"] : []), "Amount", "Checked"];
+  const rows = [];
+  const indexes = showAll ? draft.lines.map((_, i) => i) : [...flagged];
+  for (const i of indexes) {
+    const l = draft.lines[i], isFlag = flagged.has(i), orig = job.invoice.lines[i];
+    const cell = (key, cls, below) => {
+      const isMoney = key === "unit_price" || key === "amount" || key === "discount_amount";
+      const input = el("input", { class: "cell", value: isMoney && typeof l[key] === "number" ? l[key].toFixed(2) : (l[key] ?? "") });
+      input.addEventListener("input", () => {
+        if (key === "sku" || key === "description") { l[key] = input.value; changed(); }
+        else if (OPTIONAL.has(key) && input.value.trim() === "") { l[key] = null; bad.delete(i + ":" + key); input.classList.remove("invalid"); changed(); }
+        else setNumber(l, key, input.value, i + ":" + key, input);
+        input.classList.toggle("changed", String(l[key]) !== String(orig[key]));
+        if (isFlag) { checked.add(i); tr.classList.add("done"); box.checked = true; updateCount(); }
+      });
+      return el("td", { class: cls || "" }, input, below ? el("div", { class: "extras" }, below) : null);
+    };
+    const box = el("input", { type: "checkbox", title: "I checked this line", checked: checked.has(i),
+      onchange: (e) => { e.target.checked ? checked.add(i) : checked.delete(i); tr.classList.toggle("done", e.target.checked); updateCount(); } });
+    const tr = el("tr", { class: isFlag ? "flag" + (checked.has(i) ? " done" : "") : "" },
+      el("td", { class: "num", title: "Show its page", onclick: () => showPage((rep.line_pages || [])[i] || 1) }, i + 1),
+      cell("sku", "w-code"), cell("description", "w-desc", extrasText(l)), cell("quantity", "w-qty"), cell("unit_price", "w-money"),
+      disc ? cell("discount_percent", "w-qty") : null, disc ? cell("discount_amount", "w-money") : null,
+      cell("amount", "w-money"),
+      el("td", {}, isFlag ? box : el("span", { class: "small muted", title: "Proven by the checks" }, "✓")));
+    rows.push(tr);
+    if (isFlag && rep.line_notes && rep.line_notes[i]) {
+      rows.push(el("tr", { class: "note" }, el("td", {}), el("td", { colspan: heads.length - 1 }, "Why: " + rep.line_notes[i])));
+    }
+  }
+  if (!rows.length) rows.push(el("tr", {}, el("td", { colspan: heads.length, class: "muted" }, "No lines to show.")));
+  return el("table", { class: "lines" },
+    el("thead", {}, el("tr", {}, heads.map((h) => el("th", {}, h)))),
+    el("tbody", {}, rows));
+}
+
+// What the robot found out about columns it has no field for: the AI's explanation + what the math proved.
+const COLUMN_STATUS = {
+  "proven": ["Used in the math", "ok"], "information only": ["Information only", ""],
+  "not proven": ["Not proven", "warn"], "not investigated": ["Not investigated", "warn"],
+};
+function columnsBox(rep) {
+  const cols = rep.columns || [];
+  if (!cols.length) return null;
+  const worthReading = cols.some((c) => c.status !== "information only");  // doubtful, or used in the math
+  return el("details", { class: "panel colbox", open: worthReading },
+    el("summary", {}, "Extra columns on this invoice (" + cols.length + "): " + cols.map((c) => c.column).join(", ")),
+    el("ul", {}, cols.map((c) => {
+      const [label, kind] = COLUMN_STATUS[c.status] || [c.status, ""];
+      return el("li", {},
+        el("span", { class: "chip " + kind }, label), " ", el("b", {}, c.column),
+        c.meaning ? " – " + c.meaning : "",
+        el("div", { class: "small muted" }, c.detail),
+        c.reasoning ? el("div", { class: "small muted" }, "Why the robot thinks so: " + c.reasoning) : null);
+    })));
+}
+
+function totalsRowsText(inv) {
+  return (inv.totals_rows || []).map((r) => r.label + " " + money(r.amount)).join(" · ");
+}
+
+function tickShown() {
+  const n = flagged.size;
+  if (n > 5 && !confirm("Tick all " + n + " highlighted lines as checked? Only do this if you compared them with the invoice.")) return;
+  flagged.forEach((i) => checked.add(i));
+  renderReview();
+}
+
+function updateCount() {
+  const c = document.getElementById("progressCount");
+  if (c) c.textContent = checked.size + " of " + flagged.size + " checked";
+  updateSave();
+}
+
+async function showPage(n) {
+  if (n < 1 || n > job.pages) return;
+  page = n;
+  const label = document.getElementById("pageLabel"); if (label) label.textContent = "Page " + n + " of " + job.pages;
+  const img = document.getElementById("pageImg"); if (!img) return;
+  const bar = img.parentElement.previousSibling;  // the Previous / Next bar above the image box
+  if (bar) { bar.firstChild.disabled = n <= 1; bar.lastChild.disabled = n >= job.pages; }
+  const key = job.id + ":" + n;
+  try {
+    if (!pageCache.has(key)) {
+      const r = await fetch("/api/jobs/" + job.id + "/pages/" + n, { headers: { "X-API-Key": password } });
+      if (!r.ok) throw new Error("Couldn't load page " + n);
+      pageCache.set(key, URL.createObjectURL(await r.blob()));
+    }
+    if (page === n) { img.src = pageCache.get(key); img.alt = "Invoice page " + n; }
+  } catch (err) { toast(err.message); }
+}
+
+function changed() {
+  clearTimeout(checkTimer);
+  checkTimer = setTimeout(recheck, 500);  // re-check on the server shortly after the person stops typing
+  updateSums();
+  updateSave();
+}
+
+function updateSums() {
+  const s = document.getElementById("sumLine");
+  if (s) s.textContent = "The lines add up to " + money(draft.lines.reduce((t, l) => t + (Number(l.amount) || 0), 0), draft.currency)
+    + " · subtotal " + money(draft.subtotal, draft.currency);
+}
+
+async function recheck() {
+  if (bad.size) { problems = ["Some numbers can't be read; fix the red boxes."]; renderProblems(); return; }
+  try { problems = (await api("/api/jobs/" + job.id + "/check", { method: "POST", json: draft })).problems; }
+  catch (err) { if (err.message !== "signed out") problems = [err.message]; }
+  renderProblems();
+}
+
+function renderProblems() {
+  const box = document.getElementById("problemBox"); if (!box) return;
+  if (problems === null) { box.replaceChildren(el("div", { class: "notice" }, el("span", { class: "spinner" }), "Checking the numbers…")); updateCount(); return; }
+  box.replaceChildren(problems.length
+    ? el("div", { class: "notice bad" }, "These don't add up yet:", el("ul", {}, problems.slice(0, 15).map((p) => el("li", {}, p))),
+        problems.length > 15 ? el("div", { class: "small" }, "…and " + (problems.length - 15) + " more.") : null)
+    : el("div", { class: "notice ok" }, "Everything adds up."));
+  document.getElementById("acceptBox").classList.toggle("hidden", !problems.length || bad.size > 0);
+  updateSums();
+  updateCount();
+}
+
+function updateSave() {
+  const btn = document.getElementById("saveBtn"); if (!btn) return;
+  const left = flagged.size - checked.size;
+  const why = problems === null ? "Checking the numbers…"
+    : bad.size ? "Fix the numbers in red first."
+    : left > 0 ? left + (left === 1 ? " highlighted line is" : " highlighted lines are") + " not ticked yet."
+    : problems.length && !acceptSupplier ? "The numbers don't add up. Correct them, or tick the box if the supplier's invoice itself is wrong."
+    : "Ready. This saves the invoice to the Google Sheet.";
+  document.getElementById("why").textContent = why;
+  btn.disabled = !why.startsWith("Ready");
+}
+
+async function approve() {
+  const btn = document.getElementById("saveBtn"); btn.disabled = true; btn.textContent = "Saving…";
+  try {
+    await api("/api/jobs/" + job.id + "/approve", { method: "POST", json: { invoice: draft, accept_supplier_errors: acceptSupplier } });
+    toast("Saved.");
+    await refreshList(); await select(job.id);
+  } catch (err) {
+    if (err.status === 422 && err.data?.detail?.problems) { problems = err.data.detail.problems; renderProblems(); }
+    else if (err.message !== "signed out") toast(err.message);
+    btn.textContent = "Approve & save to sheet"; updateSave();
+  }
+}
+
+// ---------- go ----------
+if (password) start().catch((err) => { if (err.message !== "signed out") showLogin(err.message); });
+else showLogin();
+</script>
+</body>
+</html>

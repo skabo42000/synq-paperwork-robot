@@ -1,0 +1,221 @@
+{
+  "supplier_name": "Summit Office & Janitorial",
+  "invoice_number": "252487",
+  "invoice_date": "2026-03-01",
+  "currency": "USD",
+  "lines": [
+    {
+      "sku": "SO-10411",
+      "description": "Disinfecting Wipes, Lemon, Canister of 75",
+      "quantity": 24.0,
+      "unit_price": 7.48,
+      "amount": 179.52
+    },
+    {
+      "sku": "SO-11507",
+      "description": "Desk Chair Mat, Hard Floor, 36 x 48 in.",
+      "quantity": 6.0,
+      "unit_price": 46.44,
+      "amount": 278.64
+    },
+    {
+      "sku": "SO-10548",
+      "description": "Ballpoint Pens, Medium, Blue, Box of 12",
+      "quantity": 5.0,
+      "unit_price": 6.83,
+      "amount": 34.15
+    },
+    {
+      "sku": "SO-11096",
+      "description": "Floor Cleaner Concentrate, Neutral pH, 1 Gallon",
+      "quantity": 3.0,
+      "unit_price": 21.54,
+      "amount": 64.62
+    },
+    {
+      "sku": "SO-10548",
+      "description": "Ballpoint Pens, Medium, Blue, Box of 12",
+      "quantity": 20.0,
+      "unit_price": 5.38,
+      "amount": 107.6
+    },
+    {
+      "sku": "SO-11370",
+      "description": "Nitrile Gloves, Powder-Free, Large, Box of 100",
+      "quantity": 3.0,
+      "unit_price": 14.35,
+      "amount": 43.05
+    },
+    {
+      "sku": "SO-10685",
+      "description": "Hand Soap Refill, Foaming, Unscented, 1200 mL, Fits Most Touch-Free Dispensers",
+      "quantity": 10.0,
+      "unit_price": 13.52,
+      "amount": 135.2
+    },
+    {
+      "sku": "SO-10411",
+      "description": "Disinfecting Wipes, Lemon, Canister of 75",
+      "quantity": 20.0,
+      "unit_price": 8.69,
+      "amount": 173.8
+    },
+    {
+      "sku": "SO-11096",
+      "description": "Floor Cleaner Concentrate, Neutral pH, 1 Gallon",
+      "quantity": 4.0,
+      "unit_price": 15.4,
+      "amount": 61.6
+    },
+    {
+      "sku": "SO-10137",
+      "description": "Black Toner Cartridge, High Yield, Compatible",
+      "quantity": 2.0,
+      "unit_price": 69.21,
+      "amount": 138.42
+    },
+    {
+      "sku": "SO-10137",
+      "description": "Black Toner Cartridge, High Yield, Compatible",
+      "quantity": 2.0,
+      "unit_price": 92.11,
+      "amount": 184.22
+    },
+    {
+      "sku": "SO-10959",
+      "description": "File Folders, Letter, 1/3 Cut, Manila, Box of 100",
+      "quantity": 2.0,
+      "unit_price": 10.89,
+      "amount": 21.78
+    },
+    {
+      "sku": "SO-10548",
+      "description": "Ballpoint Pens, Medium, Blue, Box of 12",
+      "quantity": 40.0,
+      "unit_price": 4.69,
+      "amount": 187.6
+    },
+    {
+      "sku": "SO-10411",
+      "description": "Disinfecting Wipes, Lemon, Canister of 75",
+      "quantity": 3.0,
+      "unit_price": 5.29,
+      "amount": 15.87
+    },
+    {
+      "sku": "SO-10822",
+      "description": "Paper Towels, Multifold, White, 16 Packs per Case",
+      "quantity": 24.0,
+      "unit_price": 46.54,
+      "amount": 1116.96
+    },
+    {
+      "sku": "SO-10548",
+      "description": "Ballpoint Pens, Medium, Blue, Box of 12",
+      "quantity": 1.0,
+      "unit_price": 6.69,
+      "amount": 6.69
+    },
+    {
+      "sku": "SO-10822",
+      "description": "Paper Towels, Multifold, White, 16 Packs per Case",
+      "quantity": 20.0,
+      "unit_price": 43.18,
+      "amount": 863.6
+    },
+    {
+      "sku": "SO-10548",
+      "description": "Ballpoint Pens, Medium, Blue, Box of 12",
+      "quantity": 2.0,
+      "unit_price": 3.66,
+      "amount": 7.32
+    },
+    {
+      "sku": "SO-11233",
+      "description": "Sticky Notes 3 x 3 in., Yellow, 24 Pads",
+      "quantity": 24.0,
+      "unit_price": 11.75,
+      "amount": 282.0
+    },
+    {
+      "sku": "SO-10959",
+      "description": "File Folders, Letter, 1/3 Cut, Manila, Box of 100",
+      "quantity": 24.0,
+      "unit_price": 15.34,
+      "amount": 368.16
+    },
+    {
+      "sku": "SO-11370",
+      "description": "Nitrile Gloves, Powder-Free, Large, Box of 100",
+      "quantity": 12.0,
+      "unit_price": 14.83,
+      "amount": 177.96
+    },
+    {
+      "sku": "SO-10411",
+      "description": "Disinfecting Wipes, Lemon, Canister of 75",
+      "quantity": 24.0,
+      "unit_price": 7.73,
+      "amount": 185.52
+    },
+    {
+      "sku": "SO-10959",
+      "description": "File Folders, Letter, 1/3 Cut, Manila, Box of 100",
+      "quantity": 24.0,
+      "unit_price": 12.48,
+      "amount": 299.52
+    },
+    {
+      "sku": "SO-11096",
+      "description": "Floor Cleaner Concentrate, Neutral pH, 1 Gallon",
+      "quantity": 8.0,
+      "unit_price": 22.75,
+      "amount": 182.0
+    },
+    {
+      "sku": "SO-10959",
+      "description": "File Folders, Letter, 1/3 Cut, Manila, Box of 100",
+      "quantity": 5.0,
+      "unit_price": 11.4,
+      "amount": 57.0
+    },
+    {
+      "sku": "SO-11233",
+      "description": "Sticky Notes 3 x 3 in., Yellow, 24 Pads",
+      "quantity": 1.0,
+      "unit_price": 18.42,
+      "amount": 18.42
+    },
+    {
+      "sku": "SO-10959",
+      "description": "File Folders, Letter, 1/3 Cut, Manila, Box of 100",
+      "quantity": 40.0,
+      "unit_price": 15.27,
+      "amount": 610.8
+    },
+    {
+      "sku": "SO-11507",
+      "description": "Desk Chair Mat, Hard Floor, 36 x 48 in.",
+      "quantity": 8.0,
+      "unit_price": 32.86,
+      "amount": 262.88
+    },
+    {
+      "sku": "",
+      "description": "Loyalty discount",
+      "quantity": 1.0,
+      "unit_price": -25.0,
+      "amount": -25.0
+    },
+    {
+      "sku": "",
+      "description": "Delivery charge",
+      "quantity": 1.0,
+      "unit_price": 45.0,
+      "amount": 45.0
+    }
+  ],
+  "subtotal": 6084.9,
+  "tax": 456.37,
+  "total": 6541.27
+}

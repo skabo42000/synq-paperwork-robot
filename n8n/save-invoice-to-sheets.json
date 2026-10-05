@@ -1,0 +1,418 @@
+{
+  "name": "Paperwork Robot - save verified invoice to Google Sheets",
+  "nodes": [
+    {
+      "id": "wh",
+      "name": "Webhook",
+      "webhookId": "paperwork-invoice",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "paperwork-invoice",
+        "authentication": "headerAuth",
+        "responseMode": "responseNode",
+        "options": {}
+      }
+    },
+    {
+      "id": "prep",
+      "name": "Validate & prepare",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        0
+      ],
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Check everything again here: never trust the sender blindly.\nconst body = $input.first().json.body || {};\nconst inv = body.invoice || {};\nconst fail = (msg) => [{ json: { error: msg } }];\n// 'verified' = proven by the checks; 'approved' = a person checked every flagged line on the review screen.\nif (!['verified', 'approved'].includes(body.status)) return fail('Only verified or person-approved invoices are saved (status: ' + body.status + ')');\nfor (const f of ['supplier_name', 'invoice_number', 'invoice_date', 'currency'])\n  if (!inv[f] || typeof inv[f] !== 'string') return fail('Missing ' + f);\nif (!Array.isArray(inv.lines) || inv.lines.length === 0) return fail('No line items');\nif (inv.lines.length > 5000) return fail('Too many line items');\nconst num = (x) => typeof x === 'number' && isFinite(x);\nfor (const f of ['subtotal', 'tax', 'total']) if (!num(inv[f])) return fail('Bad ' + f);\n\n// Duplicate key: same supplier + same invoice number (ignoring case and extra spaces).\nconst norm = (s) => String(s).trim().replace(/\\s+/g, ' ').toLowerCase();\nconst key = norm(inv.supplier_name) + ' | ' + norm(inv.invoice_number);\nconst base = { 'Key': key, 'Supplier': inv.supplier_name, 'Invoice number': inv.invoice_number };\n\nconst lineRows = inv.lines.map((l, i) => ({ ...base, 'Line': i + 1, 'Item code': l.sku || '',\n  'Description': String(l.description || ''), 'Quantity': l.quantity, 'Unit price': l.unit_price, 'Amount': l.amount }));\nfor (const r of lineRows)\n  if (!num(r['Quantity']) || !num(r['Unit price']) || !num(r['Amount'])) return fail('Bad number on line ' + r['Line']);\n\nconst invoiceRow = { ...base, 'Invoice date': inv.invoice_date, 'Currency': inv.currency,\n  'Subtotal': inv.subtotal, 'Tax': inv.tax, 'Total': inv.total, 'Line count': lineRows.length,\n  'Check status': body.status === 'approved' ? ('approved by a person' + (body.note ? ' - ' + String(body.note).slice(0, 300) : '')) : 'verified', 'Source file': String(body.source_file || '').slice(0, 200),\n  'Added at': new Date().toISOString() };\nreturn [{ json: { key, invoiceRow, lineRows } }];"
+      }
+    },
+    {
+      "id": "valid",
+      "name": "Valid?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        440,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c1",
+              "leftValue": "={{ $json.error }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "bad",
+      "name": "Answer: rejected",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        660,
+        200
+      ],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ status: 'rejected', error: $json.error }) }}",
+        "options": {
+          "responseCode": 400
+        }
+      }
+    },
+    {
+      "id": "read",
+      "name": "Read saved invoices",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "executeOnce": true,
+      "alwaysOutputData": true,
+      "position": [
+        660,
+        -100
+      ],
+      "parameters": {
+        "operation": "read",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "REPLACE_WITH_GOOGLE_SHEET_ID"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Invoices"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "dup",
+      "name": "Is it a duplicate?",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        -100
+      ],
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const prep = $('Validate & prepare').first().json;\nconst saved = $input.all().map(i => i.json['Key']).filter(Boolean);\nreturn [{ json: { ...prep, duplicate: saved.includes(prep.key) } }];"
+      }
+    },
+    {
+      "id": "ifdup",
+      "name": "Duplicate?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1100,
+        -100
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c2",
+              "leftValue": "={{ $json.duplicate }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "dupans",
+      "name": "Answer: duplicate",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        1320,
+        -260
+      ],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ status: 'duplicate', key: $json.key, message: 'This invoice is already in the sheet. Nothing was written.' }) }}",
+        "options": {
+          "responseCode": 409
+        }
+      }
+    },
+    {
+      "id": "lines",
+      "name": "Line rows",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1320,
+        0
+      ],
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "return $input.first().json.lineRows.map(r => ({ json: r }));"
+      }
+    },
+    {
+      "id": "savelines",
+      "name": "Save line items",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1540,
+        0
+      ],
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "REPLACE_WITH_GOOGLE_SHEET_ID"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Line items"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {}
+        },
+        "options": {
+          "cellFormat": "RAW"
+        }
+      }
+    },
+    {
+      "id": "invrow",
+      "name": "Invoice row",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1760,
+        0
+      ],
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Written LAST: the invoice row is the 'done' marker. If saving the lines failed,\n// there is no invoice row, so a retry isn't blocked as a duplicate.\nreturn [{ json: $('Is it a duplicate?').first().json.invoiceRow }];"
+      }
+    },
+    {
+      "id": "saveinv",
+      "name": "Save invoice (last = done marker)",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1980,
+        0
+      ],
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "REPLACE_WITH_GOOGLE_SHEET_ID"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Invoices"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {}
+        },
+        "options": {
+          "cellFormat": "RAW"
+        }
+      }
+    },
+    {
+      "id": "ok",
+      "name": "Answer: saved",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        2200,
+        0
+      ],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ status: 'saved', key: $('Is it a duplicate?').first().json.key, lines: $('Is it a duplicate?').first().json.lineRows.length }) }}",
+        "options": {
+          "responseCode": 200
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Validate & prepare",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate & prepare": {
+      "main": [
+        [
+          {
+            "node": "Valid?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Valid?": {
+      "main": [
+        [
+          {
+            "node": "Read saved invoices",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Answer: rejected",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read saved invoices": {
+      "main": [
+        [
+          {
+            "node": "Is it a duplicate?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is it a duplicate?": {
+      "main": [
+        [
+          {
+            "node": "Duplicate?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Duplicate?": {
+      "main": [
+        [
+          {
+            "node": "Answer: duplicate",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Line rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Line rows": {
+      "main": [
+        [
+          {
+            "node": "Save line items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save line items": {
+      "main": [
+        [
+          {
+            "node": "Invoice row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Invoice row": {
+      "main": [
+        [
+          {
+            "node": "Save invoice (last = done marker)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save invoice (last = done marker)": {
+      "main": [
+        [
+          {
+            "node": "Answer: saved",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false,
+    "saveDataSuccessExecution": "none",
+    "saveDataErrorExecution": "none",
+    "saveExecutionProgress": false
+  },
+  "active": false
+}

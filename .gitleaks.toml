@@ -1,0 +1,16 @@
+title = "Default rules plus custom workflow authentication headers"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "workflow-auth-header"
+description = "Custom voice/chat/invoice webhook secret embedded in JSON"
+regex = '''(?i)["']x-(?:agent|paperwork|chat|vapi)-(?:auth|secret)["']\s*:\s*["']([A-Za-z0-9_-]{12,})["']'''
+secretGroup = 1
+keywords = ["X-Agent-Auth", "X-Paperwork-Auth", "X-Chat-Auth", "X-Vapi-Secret"]
+
+[[rules.allowlists]]
+description = "Explicit nonfunctional example placeholders"
+regexTarget = "secret"
+regexes = ['''^REPLACE_WITH_[A-Z_]+$''']

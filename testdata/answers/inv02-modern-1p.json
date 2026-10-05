@@ -1,0 +1,200 @@
+{
+  "supplier_name": "Harbor Fresh Foodservice",
+  "invoice_number": "INV-2026-8744",
+  "invoice_date": "2026-02-11",
+  "currency": "USD",
+  "lines": [
+    {
+      "sku": "HF-10274",
+      "description": "Extra Virgin Olive Oil 3 L Tin",
+      "quantity": 4.0,
+      "unit_price": 38.82,
+      "amount": 155.28
+    },
+    {
+      "sku": "HF-10274",
+      "description": "Extra Virgin Olive Oil 3 L Tin",
+      "quantity": 12.0,
+      "unit_price": 36.87,
+      "amount": 442.44
+    },
+    {
+      "sku": "HF-11233",
+      "description": "Takeout Containers, Hinged, 9 x 9 in., Compostable, Case of 200",
+      "quantity": 3.0,
+      "unit_price": 49.93,
+      "amount": 149.79
+    },
+    {
+      "sku": "HF-11233",
+      "description": "Takeout Containers, Hinged, 9 x 9 in., Compostable, Case of 200",
+      "quantity": 10.0,
+      "unit_price": 56.59,
+      "amount": 565.9
+    },
+    {
+      "sku": "HF-10000",
+      "description": "Chicken Breast, Boneless Skinless, Fresh (per lb)",
+      "quantity": 68.0,
+      "unit_price": 4.32,
+      "amount": 293.76
+    },
+    {
+      "sku": "HF-10274",
+      "description": "Extra Virgin Olive Oil 3 L Tin",
+      "quantity": 5.0,
+      "unit_price": 39.76,
+      "amount": 198.8
+    },
+    {
+      "sku": "HF-10959",
+      "description": "All-Purpose Flour, 50 lb Bag",
+      "quantity": 2.0,
+      "unit_price": 21.27,
+      "amount": 42.54
+    },
+    {
+      "sku": "HF-10137",
+      "description": "Roma Tomatoes, Case 25 lb",
+      "quantity": 20.0,
+      "unit_price": 34.96,
+      "amount": 699.2
+    },
+    {
+      "sku": "HF-10274",
+      "description": "Extra Virgin Olive Oil 3 L Tin",
+      "quantity": 6.0,
+      "unit_price": 37.75,
+      "amount": 226.5
+    },
+    {
+      "sku": "HF-11096",
+      "description": "Heavy Cream 36%, 1/2 Gallon",
+      "quantity": 20.0,
+      "unit_price": 9.35,
+      "amount": 187.0
+    },
+    {
+      "sku": "HF-11096",
+      "description": "Heavy Cream 36%, 1/2 Gallon",
+      "quantity": 6.0,
+      "unit_price": 8.1,
+      "amount": 48.6
+    },
+    {
+      "sku": "HF-11233",
+      "description": "Takeout Containers, Hinged, 9 x 9 in., Compostable, Case of 200",
+      "quantity": 6.0,
+      "unit_price": 56.12,
+      "amount": 336.72
+    },
+    {
+      "sku": "HF-11370",
+      "description": "Atlantic Salmon Fillet, Skin-On (per lb)",
+      "quantity": 44.0,
+      "unit_price": 8.34,
+      "amount": 366.96
+    },
+    {
+      "sku": "HF-10822",
+      "description": "Yellow Onions, 50 lb Sack",
+      "quantity": 8.0,
+      "unit_price": 27.63,
+      "amount": 221.04
+    },
+    {
+      "sku": "HF-10822",
+      "description": "Yellow Onions, 50 lb Sack",
+      "quantity": 5.0,
+      "unit_price": 28.47,
+      "amount": 142.35
+    },
+    {
+      "sku": "HF-10822",
+      "description": "Yellow Onions, 50 lb Sack",
+      "quantity": 24.0,
+      "unit_price": 19.87,
+      "amount": 476.88
+    },
+    {
+      "sku": "HF-10274",
+      "description": "Extra Virgin Olive Oil 3 L Tin",
+      "quantity": 1.0,
+      "unit_price": 33.82,
+      "amount": 33.82
+    },
+    {
+      "sku": "HF-11233",
+      "description": "Takeout Containers, Hinged, 9 x 9 in., Compostable, Case of 200",
+      "quantity": 3.0,
+      "unit_price": 51.41,
+      "amount": 154.23
+    },
+    {
+      "sku": "HF-10822",
+      "description": "Yellow Onions, 50 lb Sack",
+      "quantity": 10.0,
+      "unit_price": 19.79,
+      "amount": 197.9
+    },
+    {
+      "sku": "HF-10959",
+      "description": "All-Purpose Flour, 50 lb Bag",
+      "quantity": 24.0,
+      "unit_price": 28.65,
+      "amount": 687.6
+    },
+    {
+      "sku": "HF-10548",
+      "description": "Paper Napkins, 2-Ply Dinner, White, Pack of 3000",
+      "quantity": 12.0,
+      "unit_price": 56.15,
+      "amount": 673.8
+    },
+    {
+      "sku": "HF-11507",
+      "description": "Basil, Fresh, 1 lb",
+      "quantity": 8.0,
+      "unit_price": 12.29,
+      "amount": 98.32
+    },
+    {
+      "sku": "HF-10959",
+      "description": "All-Purpose Flour, 50 lb Bag",
+      "quantity": 40.0,
+      "unit_price": 27.73,
+      "amount": 1109.2
+    },
+    {
+      "sku": "HF-11096",
+      "description": "Heavy Cream 36%, 1/2 Gallon",
+      "quantity": 5.0,
+      "unit_price": 8.73,
+      "amount": 43.65
+    },
+    {
+      "sku": "HF-10411",
+      "description": "Mozzarella, Whole Milk, Low Moisture, Shredded, 4 x 5 lb Bags per Case",
+      "quantity": 10.0,
+      "unit_price": 77.29,
+      "amount": 772.9
+    },
+    {
+      "sku": "",
+      "description": "Loyalty discount",
+      "quantity": 1.0,
+      "unit_price": -25.0,
+      "amount": -25.0
+    },
+    {
+      "sku": "",
+      "description": "Delivery charge",
+      "quantity": 1.0,
+      "unit_price": 45.0,
+      "amount": 45.0
+    }
+  ],
+  "subtotal": 8345.18,
+  "tax": 688.48,
+  "total": 9033.66
+}

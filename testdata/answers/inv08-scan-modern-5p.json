@@ -1,0 +1,1166 @@
+{
+  "supplier_name": "Northfield Building Supply",
+  "invoice_number": "INV-2026-3506",
+  "invoice_date": "2026-01-02",
+  "currency": "USD",
+  "lines": [
+    {
+      "sku": "NB-10274",
+      "description": "Concrete Mix 80 lb Bag",
+      "quantity": 1.0,
+      "unit_price": 7.15,
+      "amount": 7.15
+    },
+    {
+      "sku": "NB-11370",
+      "description": "Fiberglass Insulation Batt R-13, 15 in. x 93 in., 40 sq. ft. per Bag",
+      "quantity": 3.0,
+      "unit_price": 36.93,
+      "amount": 110.79
+    },
+    {
+      "sku": "NB-10822",
+      "description": "Exterior Latex Paint, Satin, White, 5 Gallon Bucket, Mildew-Resistant Finish",
+      "quantity": 1.0,
+      "unit_price": 133.71,
+      "amount": 133.71
+    },
+    {
+      "sku": "NB-10548",
+      "description": "PVC Pipe Schedule 40, 3/4 in. x 10 ft.",
+      "quantity": 2.0,
+      "unit_price": 5.07,
+      "amount": 10.14
+    },
+    {
+      "sku": "NB-11507",
+      "description": "Rebar #4 x 20 ft.",
+      "quantity": 2.0,
+      "unit_price": 14.12,
+      "amount": 28.24
+    },
+    {
+      "sku": "NB-10137",
+      "description": "1/2 in. x 4 ft. x 8 ft. Drywall Panel, Moisture Resistant, Paper-Faced, Tapered Edge",
+      "quantity": 8.0,
+      "unit_price": 15.52,
+      "amount": 124.16
+    },
+    {
+      "sku": "NB-10822",
+      "description": "Exterior Latex Paint, Satin, White, 5 Gallon Bucket, Mildew-Resistant Finish",
+      "quantity": 4.0,
+      "unit_price": 127.15,
+      "amount": 508.6
+    },
+    {
+      "sku": "NB-11370",
+      "description": "Fiberglass Insulation Batt R-13, 15 in. x 93 in., 40 sq. ft. per Bag",
+      "quantity": 5.0,
+      "unit_price": 47.8,
+      "amount": 239.0
+    },
+    {
+      "sku": "NB-10411",
+      "description": "Wood Screws #8 x 2-1/2 in., Box of 100",
+      "quantity": 20.0,
+      "unit_price": 10.14,
+      "amount": 202.8
+    },
+    {
+      "sku": "NB-11233",
+      "description": "Roofing Nails 1-1/4 in. Galvanized, 5 lb Box",
+      "quantity": 1.0,
+      "unit_price": 20.47,
+      "amount": 20.47
+    },
+    {
+      "sku": "NB-11507",
+      "description": "Rebar #4 x 20 ft.",
+      "quantity": 40.0,
+      "unit_price": 13.34,
+      "amount": 533.6
+    },
+    {
+      "sku": "NB-10959",
+      "description": "Construction Adhesive 10 oz Cartridge",
+      "quantity": 24.0,
+      "unit_price": 4.1,
+      "amount": 98.4
+    },
+    {
+      "sku": "NB-11507",
+      "description": "Rebar #4 x 20 ft.",
+      "quantity": 12.0,
+      "unit_price": 10.99,
+      "amount": 131.88
+    },
+    {
+      "sku": "NB-10411",
+      "description": "Wood Screws #8 x 2-1/2 in., Box of 100",
+      "quantity": 24.0,
+      "unit_price": 8.01,
+      "amount": 192.24
+    },
+    {
+      "sku": "NB-10959",
+      "description": "Construction Adhesive 10 oz Cartridge",
+      "quantity": 1.0,
+      "unit_price": 4.64,
+      "amount": 4.64
+    },
+    {
+      "sku": "NB-10137",
+      "description": "1/2 in. x 4 ft. x 8 ft. Drywall Panel, Moisture Resistant, Paper-Faced, Tapered Edge",
+      "quantity": 24.0,
+      "unit_price": 17.87,
+      "amount": 428.88
+    },
+    {
+      "sku": "NB-11233",
+      "description": "Roofing Nails 1-1/4 in. Galvanized, 5 lb Box",
+      "quantity": 5.0,
+      "unit_price": 15.12,
+      "amount": 75.6
+    },
+    {
+      "sku": "NB-10274",
+      "description": "Concrete Mix 80 lb Bag",
+      "quantity": 2.0,
+      "unit_price": 7.84,
+      "amount": 15.68
+    },
+    {
+      "sku": "NB-11507",
+      "description": "Rebar #4 x 20 ft.",
+      "quantity": 12.0,
+      "unit_price": 11.63,
+      "amount": 139.56
+    },
+    {
+      "sku": "NB-10000",
+      "description": "2x4x8 Kiln-Dried Stud, Premium Grade",
+      "quantity": 24.0,
+      "unit_price": 4.56,
+      "amount": 109.44
+    },
+    {
+      "sku": "NB-10274",
+      "description": "Concrete Mix 80 lb Bag",
+      "quantity": 4.0,
+      "unit_price": 5.68,
+      "amount": 22.72
+    },
+    {
+      "sku": "NB-11096",
+      "description": "Pressure-Treated Plywood 3/4 in. x 4 ft. x 8 ft.",
+      "quantity": 2.0,
+      "unit_price": 49.47,
+      "amount": 98.94
+    },
+    {
+      "sku": "NB-11233",
+      "description": "Roofing Nails 1-1/4 in. Galvanized, 5 lb Box",
+      "quantity": 40.0,
+      "unit_price": 21.9,
+      "amount": 876.0
+    },
+    {
+      "sku": "NB-10959",
+      "description": "Construction Adhesive 10 oz Cartridge",
+      "quantity": 8.0,
+      "unit_price": 4.57,
+      "amount": 36.56
+    },
+    {
+      "sku": "NB-11370",
+      "description": "Fiberglass Insulation Batt R-13, 15 in. x 93 in., 40 sq. ft. per Bag",
+      "quantity": 20.0,
+      "unit_price": 32.71,
+      "amount": 654.2
+    },
+    {
+      "sku": "NB-11233",
+      "description": "Roofing Nails 1-1/4 in. Galvanized, 5 lb Box",
+      "quantity": 10.0,
+      "unit_price": 15.81,
+      "amount": 158.1
+    },
+    {
+      "sku": "NB-10274",
+      "description": "Concrete Mix 80 lb Bag",
+      "quantity": 1.0,
+      "unit_price": 6.02,
+      "amount": 6.02
+    },
+    {
+      "sku": "NB-10137",
+      "description": "1/2 in. x 4 ft. x 8 ft. Drywall Panel, Moisture Resistant, Paper-Faced, Tapered Edge",
+      "quantity": 24.0,
+      "unit_price": 20.33,
+      "amount": 487.92
+    },
+    {
+      "sku": "NB-11370",
+      "description": "Fiberglass Insulation Batt R-13, 15 in. x 93 in., 40 sq. ft. per Bag",
+      "quantity": 5.0,
+      "unit_price": 35.75,
+      "amount": 178.75
+    },
+    {
+      "sku": "NB-11507",
+      "description": "Rebar #4 x 20 ft.",
+      "quantity": 20.0,
+      "unit_price": 9.27,
+      "amount": 185.4
+    },
+    {
+      "sku": "NB-10822",
+      "description": "Exterior Latex Paint, Satin, White, 5 Gallon Bucket, Mildew-Resistant Finish",
+      "quantity": 3.0,
+      "unit_price": 142.0,
+      "amount": 426.0
+    },
+    {
+      "sku": "NB-11507",
+      "description": "Rebar #4 x 20 ft.",
+      "quantity": 1.0,
+      "unit_price": 12.24,
+      "amount": 12.24
+    },
+    {
+      "sku": "NB-10548",
+      "description": "PVC Pipe Schedule 40, 3/4 in. x 10 ft.",
+      "quantity": 1.0,
+      "unit_price": 6.5,
+      "amount": 6.5
+    },
+    {
+      "sku": "NB-10822",
+      "description": "Exterior Latex Paint, Satin, White, 5 Gallon Bucket, Mildew-Resistant Finish",
+      "quantity": 2.0,
+      "unit_price": 152.81,
+      "amount": 305.62
+    },
+    {
+      "sku": "NB-10274",
+      "description": "Concrete Mix 80 lb Bag",
+      "quantity": 12.0,
+      "unit_price": 5.58,
+      "amount": 66.96
+    },
+    {
+      "sku": "NB-11233",
+      "description": "Roofing Nails 1-1/4 in. Galvanized, 5 lb Box",
+      "quantity": 2.0,
+      "unit_price": 15.54,
+      "amount": 31.08
+    },
+    {
+      "sku": "NB-10000",
+      "description": "2x4x8 Kiln-Dried Stud, Premium Grade",
+      "quantity": 24.0,
+      "unit_price": 5.93,
+      "amount": 142.32
+    },
+    {
+      "sku": "NB-10685",
+      "description": "Copper Wire 12 AWG THHN Solid, Sold by the Foot",
+      "quantity": 50.0,
+      "unit_price": 0.35,
+      "amount": 17.5
+    },
+    {
+      "sku": "NB-10137",
+      "description": "1/2 in. x 4 ft. x 8 ft. Drywall Panel, Moisture Resistant, Paper-Faced, Tapered Edge",
+      "quantity": 8.0,
+      "unit_price": 17.61,
+      "amount": 140.88
+    },
+    {
+      "sku": "NB-10411",
+      "description": "Wood Screws #8 x 2-1/2 in., Box of 100",
+      "quantity": 12.0,
+      "unit_price": 7.77,
+      "amount": 93.24
+    },
+    {
+      "sku": "NB-11096",
+      "description": "Pressure-Treated Plywood 3/4 in. x 4 ft. x 8 ft.",
+      "quantity": 8.0,
+      "unit_price": 45.83,
+      "amount": 366.64
+    },
+    {
+      "sku": "NB-11370",
+      "description": "Fiberglass Insulation Batt R-13, 15 in. x 93 in., 40 sq. ft. per Bag",
+      "quantity": 40.0,
+      "unit_price": 44.23,
+      "amount": 1769.2
+    },
+    {
+      "sku": "NB-10137",
+      "description": "1/2 in. x 4 ft. x 8 ft. Drywall Panel, Moisture Resistant, Paper-Faced, Tapered Edge",
+      "quantity": 40.0,
+      "unit_price": 20.56,
+      "amount": 822.4
+    },
+    {
+      "sku": "NB-10685",
+      "description": "Copper Wire 12 AWG THHN Solid, Sold by the Foot",
+      "quantity": 29.5,
+      "unit_price": 0.76,
+      "amount": 22.42
+    },
+    {
+      "sku": "NB-10822",
+      "description": "Exterior Latex Paint, Satin, White, 5 Gallon Bucket, Mildew-Resistant Finish",
+      "quantity": 1.0,
+      "unit_price": 164.96,
+      "amount": 164.96
+    },
+    {
+      "sku": "NB-11233",
+      "description": "Roofing Nails 1-1/4 in. Galvanized, 5 lb Box",
+      "quantity": 24.0,
+      "unit_price": 20.97,
+      "amount": 503.28
+    },
+    {
+      "sku": "NB-11096",
+      "description": "Pressure-Treated Plywood 3/4 in. x 4 ft. x 8 ft.",
+      "quantity": 1.0,
+      "unit_price": 60.6,
+      "amount": 60.6
+    },
+    {
+      "sku": "NB-11233",
+      "description": "Roofing Nails 1-1/4 in. Galvanized, 5 lb Box",
+      "quantity": 2.0,
+      "unit_price": 23.36,
+      "amount": 46.72
+    },
+    {
+      "sku": "NB-11370",
+      "description": "Fiberglass Insulation Batt R-13, 15 in. x 93 in., 40 sq. ft. per Bag",
+      "quantity": 1.0,
+      "unit_price": 37.49,
+      "amount": 37.49
+    },
+    {
+      "sku": "NB-11096",
+      "description": "Pressure-Treated Plywood 3/4 in. x 4 ft. x 8 ft.",
+      "quantity": 12.0,
+      "unit_price": 56.98,
+      "amount": 683.76
+    },
+    {
+      "sku": "NB-10137",
+      "description": "1/2 in. x 4 ft. x 8 ft. Drywall Panel, Moisture Resistant, Paper-Faced, Tapered Edge",
+      "quantity": 6.0,
+      "unit_price": 14.68,
+      "amount": 88.08
+    },
+    {
+      "sku": "NB-11507",
+      "description": "Rebar #4 x 20 ft.",
+      "quantity": 10.0,
+      "unit_price": 14.41,
+      "amount": 144.1
+    },
+    {
+      "sku": "NB-10137",
+      "description": "1/2 in. x 4 ft. x 8 ft. Drywall Panel, Moisture Resistant, Paper-Faced, Tapered Edge",
+      "quantity": 8.0,
+      "unit_price": 17.28,
+      "amount": 138.24
+    },
+    {
+      "sku": "NB-11370",
+      "description": "Fiberglass Insulation Batt R-13, 15 in. x 93 in., 40 sq. ft. per Bag",
+      "quantity": 8.0,
+      "unit_price": 40.98,
+      "amount": 327.84
+    },
+    {
+      "sku": "NB-10137",
+      "description": "1/2 in. x 4 ft. x 8 ft. Drywall Panel, Moisture Resistant, Paper-Faced, Tapered Edge",
+      "quantity": 5.0,
+      "unit_price": 17.24,
+      "amount": 86.2
+    },
+    {
+      "sku": "NB-11096",
+      "description": "Pressure-Treated Plywood 3/4 in. x 4 ft. x 8 ft.",
+      "quantity": 40.0,
+      "unit_price": 68.22,
+      "amount": 2728.8
+    },
+    {
+      "sku": "NB-11096",
+      "description": "Pressure-Treated Plywood 3/4 in. x 4 ft. x 8 ft.",
+      "quantity": 20.0,
+      "unit_price": 56.3,
+      "amount": 1126.0
+    },
+    {
+      "sku": "NB-10137",
+      "description": "1/2 in. x 4 ft. x 8 ft. Drywall Panel, Moisture Resistant, Paper-Faced, Tapered Edge",
+      "quantity": 5.0,
+      "unit_price": 15.27,
+      "amount": 76.35
+    },
+    {
+      "sku": "NB-11507",
+      "description": "Rebar #4 x 20 ft.",
+      "quantity": 1.0,
+      "unit_price": 9.11,
+      "amount": 9.11
+    },
+    {
+      "sku": "NB-11096",
+      "description": "Pressure-Treated Plywood 3/4 in. x 4 ft. x 8 ft.",
+      "quantity": 12.0,
+      "unit_price": 49.44,
+      "amount": 593.28
+    },
+    {
+      "sku": "NB-10822",
+      "description": "Exterior Latex Paint, Satin, White, 5 Gallon Bucket, Mildew-Resistant Finish",
+      "quantity": 1.0,
+      "unit_price": 177.11,
+      "amount": 177.11
+    },
+    {
+      "sku": "NB-11370",
+      "description": "Fiberglass Insulation Batt R-13, 15 in. x 93 in., 40 sq. ft. per Bag",
+      "quantity": 1.0,
+      "unit_price": 31.33,
+      "amount": 31.33
+    },
+    {
+      "sku": "NB-11507",
+      "description": "Rebar #4 x 20 ft.",
+      "quantity": 1.0,
+      "unit_price": 13.48,
+      "amount": 13.48
+    },
+    {
+      "sku": "NB-11233",
+      "description": "Roofing Nails 1-1/4 in. Galvanized, 5 lb Box",
+      "quantity": 24.0,
+      "unit_price": 17.11,
+      "amount": 410.64
+    },
+    {
+      "sku": "NB-10822",
+      "description": "Exterior Latex Paint, Satin, White, 5 Gallon Bucket, Mildew-Resistant Finish",
+      "quantity": 2.0,
+      "unit_price": 123.83,
+      "amount": 247.66
+    },
+    {
+      "sku": "NB-10959",
+      "description": "Construction Adhesive 10 oz Cartridge",
+      "quantity": 20.0,
+      "unit_price": 4.11,
+      "amount": 82.2
+    },
+    {
+      "sku": "NB-11507",
+      "description": "Rebar #4 x 20 ft.",
+      "quantity": 6.0,
+      "unit_price": 13.25,
+      "amount": 79.5
+    },
+    {
+      "sku": "NB-10411",
+      "description": "Wood Screws #8 x 2-1/2 in., Box of 100",
+      "quantity": 1.0,
+      "unit_price": 8.26,
+      "amount": 8.26
+    },
+    {
+      "sku": "NB-10411",
+      "description": "Wood Screws #8 x 2-1/2 in., Box of 100",
+      "quantity": 40.0,
+      "unit_price": 9.0,
+      "amount": 360.0
+    },
+    {
+      "sku": "NB-11507",
+      "description": "Rebar #4 x 20 ft.",
+      "quantity": 4.0,
+      "unit_price": 12.74,
+      "amount": 50.96
+    },
+    {
+      "sku": "NB-10548",
+      "description": "PVC Pipe Schedule 40, 3/4 in. x 10 ft.",
+      "quantity": 20.0,
+      "unit_price": 6.56,
+      "amount": 131.2
+    },
+    {
+      "sku": "NB-10274",
+      "description": "Concrete Mix 80 lb Bag",
+      "quantity": 2.0,
+      "unit_price": 6.79,
+      "amount": 13.58
+    },
+    {
+      "sku": "NB-10685",
+      "description": "Copper Wire 12 AWG THHN Solid, Sold by the Foot",
+      "quantity": 2.0,
+      "unit_price": 0.38,
+      "amount": 0.76
+    },
+    {
+      "sku": "NB-11233",
+      "description": "Roofing Nails 1-1/4 in. Galvanized, 5 lb Box",
+      "quantity": 5.0,
+      "unit_price": 15.68,
+      "amount": 78.4
+    },
+    {
+      "sku": "NB-10959",
+      "description": "Construction Adhesive 10 oz Cartridge",
+      "quantity": 8.0,
+      "unit_price": 6.94,
+      "amount": 55.52
+    },
+    {
+      "sku": "NB-10959",
+      "description": "Construction Adhesive 10 oz Cartridge",
+      "quantity": 2.0,
+      "unit_price": 5.52,
+      "amount": 11.04
+    },
+    {
+      "sku": "NB-10685",
+      "description": "Copper Wire 12 AWG THHN Solid, Sold by the Foot",
+      "quantity": 16.0,
+      "unit_price": 0.49,
+      "amount": 7.84
+    },
+    {
+      "sku": "NB-10274",
+      "description": "Concrete Mix 80 lb Bag",
+      "quantity": 3.0,
+      "unit_price": 7.94,
+      "amount": 23.82
+    },
+    {
+      "sku": "NB-10411",
+      "description": "Wood Screws #8 x 2-1/2 in., Box of 100",
+      "quantity": 8.0,
+      "unit_price": 7.61,
+      "amount": 60.88
+    },
+    {
+      "sku": "NB-10685",
+      "description": "Copper Wire 12 AWG THHN Solid, Sold by the Foot",
+      "quantity": 49.0,
+      "unit_price": 0.59,
+      "amount": 28.91
+    },
+    {
+      "sku": "NB-10548",
+      "description": "PVC Pipe Schedule 40, 3/4 in. x 10 ft.",
+      "quantity": 24.0,
+      "unit_price": 8.39,
+      "amount": 201.36
+    },
+    {
+      "sku": "NB-10137",
+      "description": "1/2 in. x 4 ft. x 8 ft. Drywall Panel, Moisture Resistant, Paper-Faced, Tapered Edge",
+      "quantity": 12.0,
+      "unit_price": 17.31,
+      "amount": 207.72
+    },
+    {
+      "sku": "NB-10411",
+      "description": "Wood Screws #8 x 2-1/2 in., Box of 100",
+      "quantity": 4.0,
+      "unit_price": 11.29,
+      "amount": 45.16
+    },
+    {
+      "sku": "NB-11370",
+      "description": "Fiberglass Insulation Batt R-13, 15 in. x 93 in., 40 sq. ft. per Bag",
+      "quantity": 5.0,
+      "unit_price": 43.58,
+      "amount": 217.9
+    },
+    {
+      "sku": "NB-11233",
+      "description": "Roofing Nails 1-1/4 in. Galvanized, 5 lb Box",
+      "quantity": 4.0,
+      "unit_price": 23.05,
+      "amount": 92.2
+    },
+    {
+      "sku": "NB-10000",
+      "description": "2x4x8 Kiln-Dried Stud, Premium Grade",
+      "quantity": 6.0,
+      "unit_price": 5.14,
+      "amount": 30.84
+    },
+    {
+      "sku": "NB-11507",
+      "description": "Rebar #4 x 20 ft.",
+      "quantity": 6.0,
+      "unit_price": 9.87,
+      "amount": 59.22
+    },
+    {
+      "sku": "NB-11507",
+      "description": "Rebar #4 x 20 ft.",
+      "quantity": 12.0,
+      "unit_price": 13.41,
+      "amount": 160.92
+    },
+    {
+      "sku": "NB-10822",
+      "description": "Exterior Latex Paint, Satin, White, 5 Gallon Bucket, Mildew-Resistant Finish",
+      "quantity": 24.0,
+      "unit_price": 185.72,
+      "amount": 4457.28
+    },
+    {
+      "sku": "NB-10137",
+      "description": "1/2 in. x 4 ft. x 8 ft. Drywall Panel, Moisture Resistant, Paper-Faced, Tapered Edge",
+      "quantity": 3.0,
+      "unit_price": 20.17,
+      "amount": 60.51
+    },
+    {
+      "sku": "NB-10959",
+      "description": "Construction Adhesive 10 oz Cartridge",
+      "quantity": 24.0,
+      "unit_price": 4.84,
+      "amount": 116.16
+    },
+    {
+      "sku": "NB-10822",
+      "description": "Exterior Latex Paint, Satin, White, 5 Gallon Bucket, Mildew-Resistant Finish",
+      "quantity": 4.0,
+      "unit_price": 164.85,
+      "amount": 659.4
+    },
+    {
+      "sku": "NB-11233",
+      "description": "Roofing Nails 1-1/4 in. Galvanized, 5 lb Box",
+      "quantity": 12.0,
+      "unit_price": 20.24,
+      "amount": 242.88
+    },
+    {
+      "sku": "NB-10137",
+      "description": "1/2 in. x 4 ft. x 8 ft. Drywall Panel, Moisture Resistant, Paper-Faced, Tapered Edge",
+      "quantity": 1.0,
+      "unit_price": 20.16,
+      "amount": 20.16
+    },
+    {
+      "sku": "NB-11233",
+      "description": "Roofing Nails 1-1/4 in. Galvanized, 5 lb Box",
+      "quantity": 40.0,
+      "unit_price": 14.06,
+      "amount": 562.4
+    },
+    {
+      "sku": "NB-11233",
+      "description": "Roofing Nails 1-1/4 in. Galvanized, 5 lb Box",
+      "quantity": 10.0,
+      "unit_price": 21.6,
+      "amount": 216.0
+    },
+    {
+      "sku": "NB-10000",
+      "description": "2x4x8 Kiln-Dried Stud, Premium Grade",
+      "quantity": 24.0,
+      "unit_price": 5.18,
+      "amount": 124.32
+    },
+    {
+      "sku": "NB-11507",
+      "description": "Rebar #4 x 20 ft.",
+      "quantity": 4.0,
+      "unit_price": 13.88,
+      "amount": 55.52
+    },
+    {
+      "sku": "NB-10822",
+      "description": "Exterior Latex Paint, Satin, White, 5 Gallon Bucket, Mildew-Resistant Finish",
+      "quantity": 1.0,
+      "unit_price": 136.26,
+      "amount": 136.26
+    },
+    {
+      "sku": "NB-10274",
+      "description": "Concrete Mix 80 lb Bag",
+      "quantity": 5.0,
+      "unit_price": 7.09,
+      "amount": 35.45
+    },
+    {
+      "sku": "NB-10959",
+      "description": "Construction Adhesive 10 oz Cartridge",
+      "quantity": 20.0,
+      "unit_price": 4.95,
+      "amount": 99.0
+    },
+    {
+      "sku": "NB-10137",
+      "description": "1/2 in. x 4 ft. x 8 ft. Drywall Panel, Moisture Resistant, Paper-Faced, Tapered Edge",
+      "quantity": 3.0,
+      "unit_price": 20.42,
+      "amount": 61.26
+    },
+    {
+      "sku": "NB-11096",
+      "description": "Pressure-Treated Plywood 3/4 in. x 4 ft. x 8 ft.",
+      "quantity": 3.0,
+      "unit_price": 59.09,
+      "amount": 177.27
+    },
+    {
+      "sku": "NB-11507",
+      "description": "Rebar #4 x 20 ft.",
+      "quantity": 3.0,
+      "unit_price": 10.55,
+      "amount": 31.65
+    },
+    {
+      "sku": "NB-10548",
+      "description": "PVC Pipe Schedule 40, 3/4 in. x 10 ft.",
+      "quantity": 2.0,
+      "unit_price": 6.29,
+      "amount": 12.58
+    },
+    {
+      "sku": "NB-10000",
+      "description": "2x4x8 Kiln-Dried Stud, Premium Grade",
+      "quantity": 20.0,
+      "unit_price": 4.57,
+      "amount": 91.4
+    },
+    {
+      "sku": "NB-10959",
+      "description": "Construction Adhesive 10 oz Cartridge",
+      "quantity": 6.0,
+      "unit_price": 6.9,
+      "amount": 41.4
+    },
+    {
+      "sku": "NB-10411",
+      "description": "Wood Screws #8 x 2-1/2 in., Box of 100",
+      "quantity": 40.0,
+      "unit_price": 7.5,
+      "amount": 300.0
+    },
+    {
+      "sku": "NB-10822",
+      "description": "Exterior Latex Paint, Satin, White, 5 Gallon Bucket, Mildew-Resistant Finish",
+      "quantity": 1.0,
+      "unit_price": 141.13,
+      "amount": 141.13
+    },
+    {
+      "sku": "NB-10411",
+      "description": "Wood Screws #8 x 2-1/2 in., Box of 100",
+      "quantity": 3.0,
+      "unit_price": 11.87,
+      "amount": 35.61
+    },
+    {
+      "sku": "NB-11233",
+      "description": "Roofing Nails 1-1/4 in. Galvanized, 5 lb Box",
+      "quantity": 1.0,
+      "unit_price": 23.29,
+      "amount": 23.29
+    },
+    {
+      "sku": "NB-11370",
+      "description": "Fiberglass Insulation Batt R-13, 15 in. x 93 in., 40 sq. ft. per Bag",
+      "quantity": 12.0,
+      "unit_price": 32.36,
+      "amount": 388.32
+    },
+    {
+      "sku": "NB-10411",
+      "description": "Wood Screws #8 x 2-1/2 in., Box of 100",
+      "quantity": 24.0,
+      "unit_price": 7.82,
+      "amount": 187.68
+    },
+    {
+      "sku": "NB-11233",
+      "description": "Roofing Nails 1-1/4 in. Galvanized, 5 lb Box",
+      "quantity": 20.0,
+      "unit_price": 18.24,
+      "amount": 364.8
+    },
+    {
+      "sku": "NB-10822",
+      "description": "Exterior Latex Paint, Satin, White, 5 Gallon Bucket, Mildew-Resistant Finish",
+      "quantity": 20.0,
+      "unit_price": 155.76,
+      "amount": 3115.2
+    },
+    {
+      "sku": "NB-10685",
+      "description": "Copper Wire 12 AWG THHN Solid, Sold by the Foot",
+      "quantity": 15.0,
+      "unit_price": 0.44,
+      "amount": 6.6
+    },
+    {
+      "sku": "NB-10548",
+      "description": "PVC Pipe Schedule 40, 3/4 in. x 10 ft.",
+      "quantity": 1.0,
+      "unit_price": 6.31,
+      "amount": 6.31
+    },
+    {
+      "sku": "NB-10685",
+      "description": "Copper Wire 12 AWG THHN Solid, Sold by the Foot",
+      "quantity": 24.0,
+      "unit_price": 0.46,
+      "amount": 11.04
+    },
+    {
+      "sku": "NB-10685",
+      "description": "Copper Wire 12 AWG THHN Solid, Sold by the Foot",
+      "quantity": 23.0,
+      "unit_price": 0.34,
+      "amount": 7.82
+    },
+    {
+      "sku": "NB-10000",
+      "description": "2x4x8 Kiln-Dried Stud, Premium Grade",
+      "quantity": 12.0,
+      "unit_price": 4.9,
+      "amount": 58.8
+    },
+    {
+      "sku": "NB-10959",
+      "description": "Construction Adhesive 10 oz Cartridge",
+      "quantity": 10.0,
+      "unit_price": 6.57,
+      "amount": 65.7
+    },
+    {
+      "sku": "NB-10274",
+      "description": "Concrete Mix 80 lb Bag",
+      "quantity": 40.0,
+      "unit_price": 6.15,
+      "amount": 246.0
+    },
+    {
+      "sku": "NB-10822",
+      "description": "Exterior Latex Paint, Satin, White, 5 Gallon Bucket, Mildew-Resistant Finish",
+      "quantity": 24.0,
+      "unit_price": 136.63,
+      "amount": 3279.12
+    },
+    {
+      "sku": "NB-10274",
+      "description": "Concrete Mix 80 lb Bag",
+      "quantity": 6.0,
+      "unit_price": 6.68,
+      "amount": 40.08
+    },
+    {
+      "sku": "NB-10411",
+      "description": "Wood Screws #8 x 2-1/2 in., Box of 100",
+      "quantity": 4.0,
+      "unit_price": 9.12,
+      "amount": 36.48
+    },
+    {
+      "sku": "NB-10822",
+      "description": "Exterior Latex Paint, Satin, White, 5 Gallon Bucket, Mildew-Resistant Finish",
+      "quantity": 2.0,
+      "unit_price": 130.63,
+      "amount": 261.26
+    },
+    {
+      "sku": "NB-11096",
+      "description": "Pressure-Treated Plywood 3/4 in. x 4 ft. x 8 ft.",
+      "quantity": 10.0,
+      "unit_price": 65.7,
+      "amount": 657.0
+    },
+    {
+      "sku": "NB-10274",
+      "description": "Concrete Mix 80 lb Bag",
+      "quantity": 40.0,
+      "unit_price": 6.58,
+      "amount": 263.2
+    },
+    {
+      "sku": "NB-10137",
+      "description": "1/2 in. x 4 ft. x 8 ft. Drywall Panel, Moisture Resistant, Paper-Faced, Tapered Edge",
+      "quantity": 6.0,
+      "unit_price": 19.72,
+      "amount": 118.32
+    },
+    {
+      "sku": "NB-10137",
+      "description": "1/2 in. x 4 ft. x 8 ft. Drywall Panel, Moisture Resistant, Paper-Faced, Tapered Edge",
+      "quantity": 3.0,
+      "unit_price": 15.8,
+      "amount": 47.4
+    },
+    {
+      "sku": "NB-10822",
+      "description": "Exterior Latex Paint, Satin, White, 5 Gallon Bucket, Mildew-Resistant Finish",
+      "quantity": 1.0,
+      "unit_price": 134.16,
+      "amount": 134.16
+    },
+    {
+      "sku": "NB-10685",
+      "description": "Copper Wire 12 AWG THHN Solid, Sold by the Foot",
+      "quantity": 46.0,
+      "unit_price": 0.46,
+      "amount": 21.16
+    },
+    {
+      "sku": "NB-10548",
+      "description": "PVC Pipe Schedule 40, 3/4 in. x 10 ft.",
+      "quantity": 1.0,
+      "unit_price": 6.41,
+      "amount": 6.41
+    },
+    {
+      "sku": "NB-11370",
+      "description": "Fiberglass Insulation Batt R-13, 15 in. x 93 in., 40 sq. ft. per Bag",
+      "quantity": 10.0,
+      "unit_price": 37.51,
+      "amount": 375.1
+    },
+    {
+      "sku": "NB-11096",
+      "description": "Pressure-Treated Plywood 3/4 in. x 4 ft. x 8 ft.",
+      "quantity": 4.0,
+      "unit_price": 60.15,
+      "amount": 240.6
+    },
+    {
+      "sku": "NB-10137",
+      "description": "1/2 in. x 4 ft. x 8 ft. Drywall Panel, Moisture Resistant, Paper-Faced, Tapered Edge",
+      "quantity": 40.0,
+      "unit_price": 16.93,
+      "amount": 677.2
+    },
+    {
+      "sku": "NB-10685",
+      "description": "Copper Wire 12 AWG THHN Solid, Sold by the Foot",
+      "quantity": 17.5,
+      "unit_price": 0.44,
+      "amount": 7.7
+    },
+    {
+      "sku": "NB-11370",
+      "description": "Fiberglass Insulation Batt R-13, 15 in. x 93 in., 40 sq. ft. per Bag",
+      "quantity": 1.0,
+      "unit_price": 43.92,
+      "amount": 43.92
+    },
+    {
+      "sku": "NB-10274",
+      "description": "Concrete Mix 80 lb Bag",
+      "quantity": 40.0,
+      "unit_price": 7.12,
+      "amount": 284.8
+    },
+    {
+      "sku": "NB-11507",
+      "description": "Rebar #4 x 20 ft.",
+      "quantity": 40.0,
+      "unit_price": 13.85,
+      "amount": 554.0
+    },
+    {
+      "sku": "NB-10411",
+      "description": "Wood Screws #8 x 2-1/2 in., Box of 100",
+      "quantity": 6.0,
+      "unit_price": 10.48,
+      "amount": 62.88
+    },
+    {
+      "sku": "NB-11233",
+      "description": "Roofing Nails 1-1/4 in. Galvanized, 5 lb Box",
+      "quantity": 1.0,
+      "unit_price": 20.57,
+      "amount": 20.57
+    },
+    {
+      "sku": "NB-10411",
+      "description": "Wood Screws #8 x 2-1/2 in., Box of 100",
+      "quantity": 2.0,
+      "unit_price": 8.61,
+      "amount": 17.22
+    },
+    {
+      "sku": "NB-10274",
+      "description": "Concrete Mix 80 lb Bag",
+      "quantity": 2.0,
+      "unit_price": 7.65,
+      "amount": 15.3
+    },
+    {
+      "sku": "NB-10274",
+      "description": "Concrete Mix 80 lb Bag",
+      "quantity": 3.0,
+      "unit_price": 7.63,
+      "amount": 22.89
+    },
+    {
+      "sku": "NB-10685",
+      "description": "Copper Wire 12 AWG THHN Solid, Sold by the Foot",
+      "quantity": 41.0,
+      "unit_price": 0.89,
+      "amount": 36.49
+    },
+    {
+      "sku": "NB-10411",
+      "description": "Wood Screws #8 x 2-1/2 in., Box of 100",
+      "quantity": 1.0,
+      "unit_price": 9.92,
+      "amount": 9.92
+    },
+    {
+      "sku": "NB-10685",
+      "description": "Copper Wire 12 AWG THHN Solid, Sold by the Foot",
+      "quantity": 72.0,
+      "unit_price": 0.69,
+      "amount": 49.68
+    },
+    {
+      "sku": "NB-11096",
+      "description": "Pressure-Treated Plywood 3/4 in. x 4 ft. x 8 ft.",
+      "quantity": 20.0,
+      "unit_price": 65.46,
+      "amount": 1309.2
+    },
+    {
+      "sku": "NB-11370",
+      "description": "Fiberglass Insulation Batt R-13, 15 in. x 93 in., 40 sq. ft. per Bag",
+      "quantity": 2.0,
+      "unit_price": 44.65,
+      "amount": 89.3
+    },
+    {
+      "sku": "NB-10274",
+      "description": "Concrete Mix 80 lb Bag",
+      "quantity": 4.0,
+      "unit_price": 6.21,
+      "amount": 24.84
+    },
+    {
+      "sku": "NB-11507",
+      "description": "Rebar #4 x 20 ft.",
+      "quantity": 4.0,
+      "unit_price": 14.12,
+      "amount": 56.48
+    },
+    {
+      "sku": "NB-10822",
+      "description": "Exterior Latex Paint, Satin, White, 5 Gallon Bucket, Mildew-Resistant Finish",
+      "quantity": 12.0,
+      "unit_price": 155.78,
+      "amount": 1869.36
+    },
+    {
+      "sku": "NB-11096",
+      "description": "Pressure-Treated Plywood 3/4 in. x 4 ft. x 8 ft.",
+      "quantity": 2.0,
+      "unit_price": 63.31,
+      "amount": 126.62
+    },
+    {
+      "sku": "NB-10548",
+      "description": "PVC Pipe Schedule 40, 3/4 in. x 10 ft.",
+      "quantity": 24.0,
+      "unit_price": 4.75,
+      "amount": 114.0
+    },
+    {
+      "sku": "NB-10548",
+      "description": "PVC Pipe Schedule 40, 3/4 in. x 10 ft.",
+      "quantity": 1.0,
+      "unit_price": 5.97,
+      "amount": 5.97
+    },
+    {
+      "sku": "NB-10411",
+      "description": "Wood Screws #8 x 2-1/2 in., Box of 100",
+      "quantity": 4.0,
+      "unit_price": 9.83,
+      "amount": 39.32
+    },
+    {
+      "sku": "NB-10822",
+      "description": "Exterior Latex Paint, Satin, White, 5 Gallon Bucket, Mildew-Resistant Finish",
+      "quantity": 20.0,
+      "unit_price": 152.5,
+      "amount": 3050.0
+    },
+    {
+      "sku": "NB-11370",
+      "description": "Fiberglass Insulation Batt R-13, 15 in. x 93 in., 40 sq. ft. per Bag",
+      "quantity": 2.0,
+      "unit_price": 40.26,
+      "amount": 80.52
+    },
+    {
+      "sku": "NB-10137",
+      "description": "1/2 in. x 4 ft. x 8 ft. Drywall Panel, Moisture Resistant, Paper-Faced, Tapered Edge",
+      "quantity": 12.0,
+      "unit_price": 14.79,
+      "amount": 177.48
+    },
+    {
+      "sku": "NB-11096",
+      "description": "Pressure-Treated Plywood 3/4 in. x 4 ft. x 8 ft.",
+      "quantity": 10.0,
+      "unit_price": 50.75,
+      "amount": 507.5
+    },
+    {
+      "sku": "NB-10000",
+      "description": "2x4x8 Kiln-Dried Stud, Premium Grade",
+      "quantity": 5.0,
+      "unit_price": 4.36,
+      "amount": 21.8
+    },
+    {
+      "sku": "NB-10959",
+      "description": "Construction Adhesive 10 oz Cartridge",
+      "quantity": 40.0,
+      "unit_price": 6.47,
+      "amount": 258.8
+    },
+    {
+      "sku": "",
+      "description": "Loyalty discount",
+      "quantity": 1.0,
+      "unit_price": -25.0,
+      "amount": -25.0
+    },
+    {
+      "sku": "",
+      "description": "Delivery charge",
+      "quantity": 1.0,
+      "unit_price": 45.0,
+      "amount": 45.0
+    }
+  ],
+  "subtotal": 46939.06,
+  "tax": 3872.47,
+  "total": 50811.53
+}
