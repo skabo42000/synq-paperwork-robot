@@ -12,6 +12,7 @@ Invoice entry is repetitive, but a confidently wrong extraction can be expensive
 - **Validation beyond prompts:** invoice totals, line arithmetic, PDF text positions and interpretation of ambiguous extra columns.
 - **Human review:** original page images beside editable fields, highlighted uncertainty, rechecking and explicit approval.
 - **Integration boundaries:** authenticated webhook, another validation layer in n8n, duplicate checks and raw-value Sheets writes.
+- **Case study:** [how the system was designed, measured and where it falls short](docs/case-study.md), including acceptance criteria, an integration contract, latency per invoice and what blocks real use.
 - **Offline tests and synthetic fixtures:** extraction checks, portal authorization, upload limits, review and save behavior without calling an AI provider or Google Sheets.
 
 ```mermaid
