@@ -23,6 +23,7 @@ anywhere else in the project.
 
 import io
 import json
+import os
 import queue
 import re
 import threading
@@ -46,6 +47,7 @@ DATA_DIR = PROJECT_ROOT / "data" / "jobs"
 MAX_UPLOAD_MB = 20
 MAX_PAGES = 60
 UNFINISHED = ("queued", "reading")
+SAVE_UNKNOWN = "The Sheet save result is unknown. Check the Sheet before any new upload or save attempt; this upload will not be sent again automatically."
 HEIC_BRANDS = {b"heic", b"heix", b"heim", b"heis", b"hevc", b"hevx", b"hevm", b"hevs", b"mif1", b"msf1"}
 
 
@@ -108,6 +110,9 @@ class JobStore:
         for f in sorted(self.root.glob("*/job.json")):
             job = Job(**json.loads(f.read_text(encoding="utf-8")))
             self.jobs[job.id] = job
+            if job.status == "saving":
+                job.status, job.progress, job.message = "save unknown", "", SAVE_UNKNOWN
+                self._write(job)
             if job.status in UNFINISHED:  # the server stopped mid-way: read it again
                 job.status, job.progress = "queued", "Waiting in line (restarted)"
                 self.queue.put(job.id)
@@ -121,7 +126,16 @@ class JobStore:
         return self.root / job_id
 
     def _write(self, job: Job) -> None:
-        (self._dir(job.id) / "job.json").write_text(json.dumps(asdict(job), indent=1), encoding="utf-8")
+        target = self._dir(job.id) / "job.json"
+        temp = target.with_name(f".job.{uuid.uuid4().hex}.tmp")
+        try:
+            with temp.open("w", encoding="utf-8") as handle:
+                handle.write(json.dumps(asdict(job), indent=1))
+                handle.flush()
+                os.fsync(handle.fileno())
+            os.replace(temp, target)
+        finally:
+            temp.unlink(missing_ok=True)
 
     def get(self, job_id: str) -> Job:
         with self.lock:
@@ -146,8 +160,8 @@ class JobStore:
 
     def delete(self, job_id: str) -> None:
         job = self.get(job_id)
-        if job.status in UNFINISHED:
-            raise UploadRejected("This file is still being read. Delete it when it's finished.")
+        if job.status in (*UNFINISHED, "saving", "save unknown"):
+            raise UploadRejected("This upload is processing or needs Sheet reconciliation. Keep its record until the result is known.")
         with self.lock:
             del self.jobs[job_id]
             (self._dir(job_id) / "job.json").unlink(missing_ok=True)  # first: without it the job is gone for good
@@ -222,17 +236,27 @@ class JobStore:
 
     def save(self, job_id: str, invoice: Invoice, status: str, note: str = "") -> Job:
         """Send to the Google Sheet and record what happened."""
-        job = self.get(job_id)
+        if status not in ("verified", "approved"):
+            raise UploadRejected("The invoice must be checked or approved before saving.")
+        with self.lock:
+            job = self.jobs[job_id]
+            if job.status not in ("verified", "needs review", "save failed"):
+                raise UploadRejected("This upload is already saving, saved, or awaiting Sheet reconciliation.")
+            job.status, job.progress = "saving", "Saving to the Google Sheet"
+            job.invoice = invoice.model_dump()
+            # Persist before the request. A restart must never silently retry an ambiguous write.
+            self._write(job)
         try:
             result = self.send(invoice, status, job.file_name, note)
+            if result.status not in ("saved", "duplicate", "rejected"):
+                raise ValueError("Unrecognized Sheet response")
         except Exception:
-            traceback.print_exc()
-            return self.update(job_id, status="save failed",
-                               message="Couldn't reach the Google Sheet. Nothing was saved; please try again.")
+            # Provider exception text can contain invoice data or an authenticated URL.
+            return self.update(job_id, status="save unknown", progress="", message=SAVE_UNKNOWN)
         if result.status == "saved":
-            return self.update(job_id, status="saved", saved_as=status, invoice=invoice.model_dump(),
+            return self.update(job_id, status="saved", progress="", saved_as=status, invoice=invoice.model_dump(),
                                message=f"Saved to the Google Sheet ({result.lines} lines).")
         if result.status == "duplicate":
-            return self.update(job_id, status="duplicate",
+            return self.update(job_id, status="duplicate", progress="",
                                message="This invoice is already in the Google Sheet. Nothing new was written.")
-        return self.update(job_id, status="save failed", message=f"The Google Sheet refused it: {result.message}")
+        return self.update(job_id, status="save failed", progress="", message=f"The Google Sheet refused it: {result.message}")

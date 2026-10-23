@@ -153,7 +153,10 @@ def create_app(store: JobStore | None = None, password: str | None = None) -> Fa
             else "approved"
         note = ("saved as printed - the supplier's invoice itself has: " + "; ".join(problems))[:300] if problems \
             else "corrected by a person" if edited else "checked by a person"
-        return asdict(get_store().save(job_id, body.invoice, status, note if status == "approved" else ""))
+        try:
+            return asdict(get_store().save(job_id, body.invoice, status, note if status == "approved" else ""))
+        except UploadRejected as exc:
+            raise HTTPException(409, str(exc)) from exc
 
     @app.delete("/api/jobs/{job_id}", dependencies=auth)
     def delete(job_id: str) -> dict:
