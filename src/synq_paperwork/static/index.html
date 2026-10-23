@@ -205,12 +205,14 @@ const STATUS = {
   "needs review": ["Needs your check", "warn"],
   "saved":        ["Saved", "ok"],
   "duplicate":    ["Already in the sheet", "ok"],
+  "saving":       ["Saving…", ""],
+  "save unknown": ["Check Sheet result", "warn"],
   "save failed":  ["Not saved yet", "bad"],
   "failed":       ["Couldn't read", "bad"],
 };
 const chip = (status) => { const [label, kind] = STATUS[status] || [status, ""]; return el("span", { class: "chip " + kind }, label); };
 const unfinished = (s) => s === "queued" || s === "reading";
-const busy = (s) => unfinished(s) || s === "verified";  // "verified" lasts a few seconds while it's saved to the sheet
+const busy = (s) => unfinished(s) || s === "verified" || s === "saving";  // "verified" lasts a few seconds while it's saved to the sheet
 const reviewable = (s) => s === "needs review" || s === "save failed";
 
 // ---------- talking to the server ----------
@@ -296,7 +298,7 @@ async function select(id) {
   try { job = await api("/api/jobs/" + id); } catch (err) { if (err.message !== "signed out") toast(err.message); return; }
   if (unfinished(job.status)) { renderProgress(); detailTimer = setTimeout(() => select(id), 2000); return; }
   if (reviewable(job.status)) startReview(); else renderResult();
-  if (job.status === "verified") detailTimer = setTimeout(() => select(id), 2000);  // being saved right now
+  if (job.status === "verified" || job.status === "saving") detailTimer = setTimeout(() => select(id), 2000);  // being saved right now
 }
 
 function renderWelcome() {
@@ -335,7 +337,7 @@ function deleteButton() {
 
 function renderResult() {
   const inv = job.invoice || {}, rep = job.report || {};
-  const kind = job.status === "failed" || job.status === "save failed" ? "bad" : job.status === "needs review" ? "warn" : "ok";
+  const kind = job.status === "failed" || job.status === "save failed" ? "bad" : job.status === "needs review" || job.status === "save unknown" ? "warn" : "ok";
   const by = job.saved_as === "approved" ? "Checked and approved by a person." : job.saved_as === "verified" ? "Every line was proven by the automatic checks." : "";
   const parts = [...header(deleteButton()), el("div", { class: "notice " + kind }, job.message, by ? el("div", { class: "small" }, by) : null)];
   if (job.invoice) {

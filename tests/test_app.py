@@ -65,7 +65,7 @@ def wait(client, job_id, timeout=10):
     end = time.time() + timeout
     while time.time() < end:
         job = client.get(f"/api/jobs/{job_id}", headers=KEY).json()
-        if job["status"] not in ("queued", "reading", "verified"):  # "verified" is auto-saving right now
+        if job["status"] not in ("queued", "reading", "verified", "saving"):  # "verified" is auto-saving right now
             return job
         time.sleep(0.05)
     raise TimeoutError(job_id)

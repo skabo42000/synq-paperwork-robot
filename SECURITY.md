@@ -22,3 +22,7 @@ The security workflow scans Git history on pushes / pull requests with fully red
 - Documents and model outputs are untrusted input. Arithmetic / source checks and human review reduce errors; they cannot prove all extracted text is correct or stop every prompt injection.
 - n8n credentials / Sheet IDs were removed and the export is inactive. Authentication must be configured at the receiver as well as the sender.
 - Sheets duplicate detection is a read-then-write flow. It is not a transaction: concurrent writes / partial failure need durable idempotency and reconciliation before production use.
+
+## Local save recovery (2026-10-22)
+
+Before a Sheet request, the portal records `saving` atomically. Concurrent approvals of the same upload are refused. A timeout, malformed acknowledgment or interrupted save becomes `save unknown`, and that upload cannot be resent or deleted through the portal. Reconcile the Sheet first; do not re-upload it as a retry. This is per-upload, single-process protection. It does not make the remote Sheets workflow transactional or prevent two separate uploads/processes racing on the same invoice. Durable remote idempotency and partial-write reconciliation remain production work.

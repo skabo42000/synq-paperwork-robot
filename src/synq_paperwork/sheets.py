@@ -57,11 +57,15 @@ def send_to_sheet(invoice: Invoice, status: str, source_file: str = "", note: st
                    json={"status": status, "source_file": source_file, "note": note,
                          "invoice": invoice.model_dump()})
     body = r.json() if r.headers.get("content-type", "").startswith("application/json") else {}
+    if not isinstance(body, dict):
+        raise RuntimeError("Unrecognized Sheet acknowledgment; reconcile before retrying.")
     if r.status_code == 200:
+        if body.get("status") != "saved" or type(body.get("lines")) is not int or body["lines"] != len(invoice.lines):
+            raise RuntimeError("Incomplete Sheet acknowledgment; reconcile before retrying.")
         return SaveResult("saved", f"saved {body.get('lines')} lines", body.get("lines", 0))
-    if r.status_code == 409:
+    if r.status_code == 409 and body.get("status") == "duplicate":
         return SaveResult("duplicate", body.get("message", "already in the sheet"))
-    if r.status_code == 400:
+    if r.status_code == 400 and body.get("status") == "rejected":
         return SaveResult("rejected", body.get("error", "rejected"))
     r.raise_for_status()  # 403 (wrong secret), 500 (n8n/Google problem): a real error
     return SaveResult("rejected", f"unexpected answer {r.status_code}")
