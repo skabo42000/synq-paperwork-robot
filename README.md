@@ -1,39 +1,45 @@
 # Synq Paperwork Robot
 
-**Invoice extraction, deterministic checks, human review and an n8n / Google Sheets handoff.**
+An invoice can look right and still contain a wrong quantity, price or total. This local prototype reads invoice PDFs and scans, checks the extracted fields against arithmetic and source evidence, and sends uncertain lines to a review screen before they can be saved to Google Sheets.
 
-Built by **Bosko Tutnjilovic**, founder of [Synq Logic](https://synqlogic.com), as an applied AI automation portfolio project.
+I built this with AI coding agents as a Synq Logic portfolio project. I defined the workflow, directed the build and checked the results. **This is a single-user local prototype, with evidence from synthetic invoices.**
 
-Invoice entry is repetitive, but a confidently wrong extraction can be expensive. This Python prototype reads digital PDFs and scanned invoices, checks its output against arithmetic and source evidence, and sends uncertain records to a password-protected review portal. Only verified or explicitly approved records reach the Sheets integration.
+**Recorded result:** on September 27, 2026, it matched **3,844 of 3,875 expected lines on nine synthetic invoices (99.2%)**. All 31 incorrect lines were flagged for review. That describes this small test set, not an accuracy guarantee for real invoices.
 
-## What employers can inspect
+**Start here:** [case study](docs/case-study.md) · [evaluation and the difficult scan](docs/evaluation.md) · [offline quickstart](#run-the-offline-checks)
 
-- **LangGraph pipeline:** page reading, bounded rereading, and a second-reader / referee path for scanned text.
-- **Validation beyond prompts:** invoice totals, line arithmetic, PDF text positions and interpretation of ambiguous extra columns.
-- **Human review:** original page images beside editable fields, highlighted uncertainty, rechecking and explicit approval.
-- **Integration boundaries:** authenticated webhook, another validation layer in n8n, duplicate checks and raw-value Sheets writes.
-- **Case study:** [how the system was designed, measured and where it falls short](docs/case-study.md), including acceptance criteria, an integration contract, latency per invoice and what blocks real use.
-- **Offline tests and synthetic fixtures:** extraction checks, portal authorization, upload limits, review and save behavior without calling an AI provider or Google Sheets.
+Bosko Tutnjilovic · AI Automation Engineer · [Synq Logic](https://synqlogic.com)
+
+## What happens to an invoice
+
+1. The pipeline reads pages and extracts invoice fields and line items. Scanned pages can go through additional readers and a referee.
+2. Plain-code checks compare line arithmetic, invoice totals and PDF text positions. Failing pages can be reread within a fixed limit.
+3. A verified invoice goes to the configured Sheets handoff automatically. An uncertain invoice opens a review path with page images beside editable fields.
+4. A person corrects and rechecks the fields, or explicitly approves an exception. The sender accepts only verified or approved records.
+5. The n8n workflow validates again, checks for duplicates and writes raw values to the intended Sheet.
+
+“Verified” means these checks passed. It is not a financial audit or proof that every possible error has been found.
 
 ```mermaid
 flowchart LR
-    A[PDF or phone photo] --> B[Upload checks and job queue]
-    B --> C[LangGraph extraction]
-    C --> D[Arithmetic and source checks]
-    D -->|uncertain| E[Human review and recheck]
-    D -->|verified| F[Authenticated n8n webhook]
-    E -->|approved| F
-    F --> G[Validate and detect duplicates]
-    G --> H[Google Sheets]
+    A[Invoice PDF or scan] --> B[Page reading]
+    B --> C[Arithmetic and source checks]
+    C -->|uncertain| D[Review and recheck]
+    C -->|verified| E[Authenticated n8n handoff]
+    D -->|approved| E
+    E --> F[Validate and check duplicates]
+    F --> G[Test Google Sheet]
 ```
 
-## Evidence and limits
+## The useful failure case
 
-The repository contains **nine generated invoices with answer keys**: two layouts, 1 / 5 / 30-page documents, and digital / scanned variants. They contain synthetic data.
+The recorded evaluation covers two layouts, digital and scanned variants, and documents of 1, 5 and 30 pages. Eight of nine invoices were verified automatically. The difficult 30-page scan contained 31 incorrect extracted lines; all were flagged. Two correct lines were also flagged.
 
-A recorded local run on **September 27, 2026** matched **3,844 of 3,875 expected lines (99.2%)**. Eight invoices were verified; the 30-page scanned classic invoice needed review. Its 31 incorrect extracted lines were flagged; 33 lines were flagged in total. No unflagged incorrect lines or incorrectly verified invoices were observed **on this small synthetic set**. See [the evaluation summary](docs/evaluation.md). This is not a production accuracy claim, a financial audit, or evidence of client time savings.
+No incorrect line escaped a flag on this set. That observation does not establish a zero-error rate on new layouts, phone photos, other languages or real customer documents. The [evaluation summary](docs/evaluation.md) gives the per-invoice results and the public fixtures have answer keys.
 
-## Quick start
+The [case study](docs/case-study.md) explains the assumed business scenario, acceptance criteria, design decisions, recorded latency and remaining limits. There is no customer deployment or measured client time-saving result.
+
+## Run the offline checks
 
 Requires Python 3.12+ and [uv](https://docs.astral.sh/uv/).
 
@@ -44,51 +50,60 @@ uv sync --locked
 uv run pytest -q
 ```
 
-The tests use fake readers and a fake Sheets sender. **No credentials or external service calls are needed for tests.**
+The tests use fake readers and a fake Sheets sender. They need no credentials and make no model or Sheets calls. Dependency installation needs package access. 99 offline tests passed on October 22, 2026.
 
-To run the actual portal:
+For a short review without installing anything, read the [nine-invoice result table](docs/evaluation.md), then the save/review tests in [tests/](tests/).
 
-1. Copy `.env.example` to `.env` (`Copy-Item .env.example .env` in PowerShell).
+## Save failures need a clear state
+
+A timeout does not prove that a remote write failed. The local app records that saving has started before making the request. It blocks concurrent approvals of the same upload and validates the successful acknowledgment.
+
+An interrupted or ambiguous write becomes **save unknown**. The app refuses automatic retry or deletion of that upload until the Sheet result has been reconciled. Uploading the document again is not a safe recovery procedure.
+
+These controls protect a single local process and upload. The Sheets duplicate check is read-then-append, not a transaction. Concurrent executions or partial writes still require durable remote idempotency and reconciliation before production use.
+
+## Run the portal with your own test integrations
+
+This path makes external model calls and can write to a Sheet. Start with the synthetic fixtures and an account and test Sheet you control.
+
+1. Copy `.env.example` to `.env`.
 2. Set a random `PORTAL_PASSWORD` of at least 12 characters.
-3. Set your own Gemini API key (`GOOGLE_API_KEY_DEV` takes precedence if supplied).
-4. Configure a **test** n8n workflow and Sheet following [the integration guide](n8n/README.md). Leave the webhook blank until you want writes; a verified invoice then reports a save failure rather than writing elsewhere.
+3. Set your own Gemini key. `GOOGLE_API_KEY_DEV` takes precedence when supplied.
+4. Follow [n8n/README.md](n8n/README.md) to configure the authenticated handoff and the exact headers in a test Sheet. The supplied export is inactive and has account bindings removed.
+
+Leave the webhook blank if you want no Sheets writes; a verified invoice will report a save failure. Extraction still sends document content to the configured model provider and may cost money.
 
 ```bash
 uv run uvicorn synq_paperwork.app:app --host 127.0.0.1 --port 8000
 ```
 
-Open `http://localhost:8000`. Upload a file from `testdata/invoices/`. Actual extraction sends document content to the configured AI provider and may incur costs. Verified files are automatically sent to the configured webhook; flagged files require approval. Start with synthetic documents and your own test Sheet.
+Open `http://127.0.0.1:8000` and upload a fixture from `testdata/invoices/`. Compare extracted fields with the original page. For **needs review**, correct flagged fields, recheck and approve only after checking the source. Verified invoices are sent automatically when the webhook is configured.
 
-## Walkthrough
-
-1. Run the offline tests to see successful saves, duplicate handling and a flagged invoice through fake integrations.
-2. With your own integrations configured, upload a one-page synthetic invoice and inspect the extracted fields and checks.
-3. Open any record marked **needs review**, compare its flagged lines with the page image, correct them and recheck.
-4. Approve only after checking the source. The override for supplier arithmetic errors is explicit and recorded.
-5. Inspect the Sheet and try the same document again to observe the duplicate check.
-
-## Project map
-
-| Path | Purpose |
-|---|---|
-| `src/synq_paperwork/pipeline.py` | Graph orchestration and verification report |
-| `checks.py`, `columns.py`, `crosscheck.py` | Deterministic rules and independent readings |
-| `app.py`, `jobs.py`, `static/` | Authenticated upload and review portal / local queue |
-| `sheets.py`, `n8n/` | Verified / approved data handoff |
-| `testdata/`, `tests/` | Generated invoices, answer keys and offline tests |
-| `evals.py` | Provider-based evaluation against answer keys |
-
-## Evaluation commands
+Optional provider-based evaluation, beginning with a one-page fixture:
 
 ```bash
-# Makes external model calls; start with a one-page fixture.
 uv run python -m synq_paperwork.evals checked 1p
 ```
 
-Full evaluations can make many model requests. Outputs remain under ignored `evals/results/`; private uploads remain under ignored `data/`.
+This command calls the model provider. It is separate from the offline tests.
 
-## Deployment and security
+## Where to inspect the design
 
-This is a **single-user local prototype**. A shared portal password is not tenant isolation. The queue and document store are local; uploads remain on disk until deleted. Public deployment needs access control, request / cost limits, encrypted storage, retention rules, backups and operational monitoring. Duplicate checks in Sheets are not a transactional guarantee under concurrent writes. Treat uploaded documents as untrusted and retain human review for consequential decisions.
+| Path | What to look for |
+| --- | --- |
+| `src/synq_paperwork/pipeline.py` | LangGraph extraction and verification flow |
+| `src/synq_paperwork/checks.py`, `columns.py`, `crosscheck.py` | Arithmetic, column interpretation and reader comparisons |
+| `src/synq_paperwork/app.py`, `jobs.py`, `static/` | Portal, review, local queue and save states; filenames share the package prefix |
+| `src/synq_paperwork/sheets.py` | Sender gate and acknowledgment validation |
+| `n8n/` | Inactive Sheets handoff template and integration contract |
+| `testdata/`, `tests/` | Synthetic invoices, answer keys and offline failure cases |
 
-Read [SECURITY.md](SECURITY.md) before using real documents. Public workflow exports have credentials and tenant identifiers removed and are inactive until you configure them.
+The project uses Python, LangGraph, Gemini, PyMuPDF, FastAPI, n8n and Google Sheets.
+
+## Limits and data handling
+
+The portal uses one shared password and a local queue. Uploads remain on local disk; ignored folders are not encrypted storage. There is no tenant isolation or established production operating model. Public use would need stronger access control, shared spending limits, retention rules, encryption, monitoring and reliable remote-write recovery.
+
+Read [SECURITY.md](SECURITY.md) before adding real documents. Use synthetic data while evaluating the project.
+
+There is no hosted demo recorded for this prototype. The code uses the [MIT License](LICENSE).
