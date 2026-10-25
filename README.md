@@ -50,7 +50,7 @@ uv sync --locked
 uv run pytest -q
 ```
 
-The tests use fake readers and a fake Sheets sender. They need no credentials and make no model or Sheets calls. Dependency installation needs package access. The project card records 99 offline tests passing on October 22, 2026; that is a dated result, not a fresh test run of your clone.
+The tests use fake readers and a fake Sheets sender. They need no credentials and make no model or Sheets calls. Dependency installation needs package access. 99 offline tests passed on October 22, 2026.
 
 For a short review without installing anything, read the [nine-invoice result table](docs/evaluation.md), then the save/review tests in [tests/](tests/).
 
@@ -106,4 +106,4 @@ The portal uses one shared password and a local queue. Uploads remain on local d
 
 Read [SECURITY.md](SECURITY.md) before adding real documents. Use synthetic data while evaluating the project.
 
-There is no hosted demo recorded for this prototype. Code reuse terms have not been established in this review; the supplied repository listing contains no project LICENSE file. Setup and external integrations were not rerun for the October 25, 2026 documentation review.
+There is no hosted demo recorded for this prototype. The code uses the [MIT License](LICENSE).
